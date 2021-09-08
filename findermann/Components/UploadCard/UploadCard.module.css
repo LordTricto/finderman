@@ -1,0 +1,130 @@
+.editupload_card {
+  box-shadow: 0px 3px 6px #00000054;
+  border-radius: 5px;
+  margin: 9% 0;
+}
+.editupload__image_container {
+  position: relative;
+  width: 100%;
+}
+/* .image {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+  height: 20rem;
+  width: 20rem;
+} */
+.editupload__image_container img {
+  width: 100%;
+  height: 100%;
+}
+.editupload__moreinfo {
+  padding: 0.9rem 1rem;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "editupload__nameinfo editupload__nameinfo num_of_view num_of_view"
+    "boosted . . ."
+    "delete_btn delete_btn edit_btn edit_btn";
+  gap: 20px 2px;
+}
+
+.editupload__nameinfo {
+  grid-area: editupload__nameinfo;
+  align-self: stretch;
+}
+.num_of_view {
+  grid-area: num_of_view;
+  justify-self: center;
+  align-self: stretch;
+}
+.boosted {
+  grid-area: boosted;
+}
+.delete_btn {
+  grid-area: delete_btn;
+}
+.edit_btn {
+  grid-area: edit_btn;
+  width: 100%;
+  justify-self: right;
+}
+
+.editupload__nameinfo p:not(.item_name) {
+  color: #0d325c;
+  font-size: 0.8rem;
+  padding: 0.3rem 0;
+}
+.editupload__nameinfo .item_name {
+  font-size: 1.5rem;
+  color: var(--thick-blue);
+}
+
+.editupload__moreinfo .num_of_view {
+  margin: 0.4rem 0;
+  color: #0000007a;
+}
+
+.editupload__moreinfo .boosted {
+  border: transparent;
+  background-color: #1a508c;
+  color: #ffffffd8;
+  padding: 0.4rem 1rem;
+  width: 100px;
+  cursor: pointer;
+}
+
+.editupload__moreinfo .btn {
+  color: #ffffffd8;
+  cursor: pointer;
+  border: transparent;
+  background-color: #1a508c;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  display: block;
+  width: 120px;
+}
+.btn.delete_btn {
+  background-color: #7e0000;
+}
+/* end of  if for edituploadPage */
+
+@media screen and (min-width: 500px) {
+  .editupload__moreinfo .boosted {
+    width: 150px;
+  }
+  .editupload__moreinfo .btn {
+    width: 150px;
+    padding: 0.8rem 1rem;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .editupload_card {
+    display: flex;
+    padding: 0.9rem;
+    height: 20rem;
+    margin: 4% auto;
+  }
+  .editupload__image_container {
+    width: 40%;
+  }
+  .editupload__moreinfo {
+    width: 60%;
+  }
+  .editupload__moreinfo .boosted {
+    width: 100px;
+  }
+  .editupload__moreinfo .btn {
+    width: 100px;
+  }
+
+  .editupload__moreinfo {
+    grid-template-areas:
+      "editupload__nameinfo editupload__nameinfo num_of_view num_of_view"
+      "boosted . delete_btn edit_btn"
+      "boosted . delete_btn edit_btn";
+  }
+}

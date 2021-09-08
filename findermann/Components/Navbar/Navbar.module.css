@@ -1,0 +1,375 @@
+@keyframes showNavlinks {
+  50% {
+    width: 90%;
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+.nav {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  max-width: 100rem;
+  width: 80vw;
+}
+
+.navlinks {
+  z-index: 10;
+  position: fixed;
+  width: 70%;
+  height: 100%;
+  background-color: var(--lightBlue);
+  padding: 1rem 0.6rem;
+  top: 0;
+  left: 0;
+  padding-top: 5rem;
+  transform: translateX(-100%);
+  pointer-events: visible;
+}
+.navlinks li a {
+  display: inline-block;
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  margin: 4% 0;
+  text-align: center;
+  color: #ffffffd8;
+  text-decoration: none;
+  background-color: var(--lightBlue);
+  transition: background-color 0.6s ease-in-out;
+}
+.navlinks li a:hover {
+  background-color: var(--thick-blue);
+}
+.navlinks.show_nav {
+  animation: showNavlinks forwards 1s;
+}
+.laptop_navlinks {
+  display: none;
+}
+#finderman-Logo {
+  color: #ffffff;
+  font-weight: 500;
+}
+.inputContainer input {
+  padding: 0rem 0.8rem;
+  border: transparent;
+  border-radius: 40px;
+  background-color: var(--veryLightBlue);
+  outline: none;
+  margin-bottom: 2%;
+  width: 100%;
+}
+.inputContainer input:valid {
+  border: 1px solid #0d325c;
+}
+.inputContainer input::placeholder {
+  color: var(--lightBlue);
+  font-weight: 500;
+  font-size: 1rem;
+}
+/* .select_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+  margin: 4% 0;
+  background-color: #fff;
+  border-radius: 0 40px 40px 0;
+  overflow: hidden;
+}
+.select_container select {
+  padding: 0.6rem 1rem;
+  color: #0d325ccc;
+  width: 100%;
+  border: transparent;
+  outline: none;
+  appearance: none;
+  text-align: right;
+}
+.select_container select option {
+  outline: 0px;
+  border: 0px;
+  border-radius: 40px;
+  background-color: white;
+  padding: 5rem;
+}
+.select_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  outline: none;
+  cursor: pointer;
+  color: var(--lightBlue);
+  padding: 0 0 0 0.8rem;
+} */
+
+.select_container {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  position: relative;
+  border-radius: 0 40px 40px 0;
+  padding: 0 1rem;
+  text-align: right;
+  font-size: 1rem;
+  width: 10rem;
+  height: 100%;
+}
+.select_container span {
+  position: absolute;
+  left: 1rem;
+  transition: 0.4s;
+}
+.select_container_options {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  width: 100%;
+  list-style: none;
+  border: 1px solid black;
+  z-index: 1;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.container_appear {
+  opacity: 1;
+  pointer-events: unset;
+}
+.container_disappear {
+  opacity: 0;
+  pointer-events: none;
+}
+.select_container_options li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  min-height: 3rem;
+  background-color: white;
+}
+.select_container_options li:hover {
+  background-color: #f2f7fd;
+}
+.select_container_options li:not(:first-child) {
+  border-top: 0.5px solid black;
+}
+.button_span_on {
+  transform: rotate(180deg);
+  transition: 0.4s;
+}
+.button_span_off {
+  transform: rotate(0deg);
+  transition: 0.4s;
+}
+
+.icon {
+  font-size: 0.9rem;
+  font-weight: 100;
+}
+
+.nav_search {
+  border: transparent;
+  background-color: var(--thick-blue);
+  color: #ffffffd8;
+  border-radius: 50px;
+  box-shadow: 0px 3px 6px #00000070;
+  margin: 3% 0;
+  margin-bottom: 9%;
+}
+.nav_search:hover {
+  color: #ffffff;
+}
+.ham {
+  font-size: 2rem;
+  color: var(--veryLightBlue);
+}
+
+@media screen and (min-width: 500px) {
+  .navlinks li a {
+    padding: 1rem 0.9rem;
+    margin: 1% 0;
+    max-width: 500px;
+    border-radius: 50px;
+  }
+  .select-container {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  #finderman-Logo {
+    padding-right: 2rem;
+    font-size: 1.75rem;
+  }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+  }
+  .ham {
+    display: none;
+  }
+  .laptop_navlinks {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+  }
+  .laptop_navlinks form {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin: 0;
+    width: 40%;
+  }
+  .laptop_navlinks .inputContainer {
+    display: flex;
+    align-items: center;
+    height: 2.25rem;
+    margin: 0;
+  }
+  .laptop_navlinks .select-container {
+    width: 9rem;
+    height: 100%;
+    margin: 0;
+  }
+  .laptop_navlinks .select-container select {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0rem 1rem;
+    text-align: right;
+  }
+  .laptop_navlinks #laptop_navlinks_searchText {
+    width: 15rem;
+    height: 100%;
+    border: transparent;
+    margin: 0;
+    padding: 0rem 1.5rem;
+    border-radius: 40px 0px 0px 40px;
+  }
+  .nav_search {
+    padding: 0.6rem 1.4rem;
+    margin: 0;
+    margin-left: 3%;
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+  .laptop_navlinks .extra_links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 57%;
+  }
+
+  .laptop_navlinks .extra_links li a,
+  .laptop_navlinks .extra_links li {
+    display: inline-block;
+    font-size: 0.8rem;
+    text-align: center;
+    color: #ffffffd8;
+    text-decoration: none;
+    background-color: var(--lightBlue);
+    transition: background-color 0.6s ease-in-out;
+  }
+  .laptop_navlinks .extra_links li a:hover,
+  .laptop_navlinks .extra_links li:hover {
+    color: white;
+  }
+  .laptop_navlinks .extra_links .post_ad {
+    background-color: var(--thick-blue);
+    border-radius: 10px;
+    padding: 0.8rem 1.1rem;
+    font-weight: 400;
+    font-size: 0.8rem;
+  }
+
+  .extra_links__links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+  .extra_links__links--spaceOne {
+    width: fit-content;
+  }
+  .extra_links__item--padding {
+    padding-left: 1.2rem;
+  }
+  .extra_links__links--spaceTwo {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .extra_links__item--padding {
+    padding-left: 1rem;
+  }
+  .extra_links__links--spaceTwo {
+    width: 44%;
+  }
+  .laptop_navlinks form {
+    width: 45%;
+  }
+  .laptop_navlinks .extra_links {
+    width: 53%;
+  }
+}
+@media screen and (min-width: 1260px) {
+  #finderman-Logo {
+    font-size: 2rem;
+  }
+
+  .nav_search {
+    width: 6.5rem;
+    font-size: 0.9rem;
+    padding: 0.5rem 1.4rem;
+  }
+  .laptop_navlinks .extra_links li a {
+    font-size: 0.8rem;
+  }
+  .laptop_navlinks .extra_links .post_ad {
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  .extra_links__item--padding {
+    padding-left: 1.5rem;
+  }
+  .extra_links__links--spaceTwo {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1560px) {
+  .laptop_navlinks form {
+    width: 50%;
+  }
+  .laptop_navlinks .extra_links {
+    width: 48%;
+  }
+}
+
+@media screen and (min-width: 1710px) {
+  #finderman-Logo {
+    font-size: 2.5rem;
+  }
+  .laptop_navlinks .extra_links {
+    width: 47%;
+  }
+  .extra_links__links--spaceTwo {
+    width: 47%;
+  }
+}

@@ -1,0 +1,24 @@
+.content_table {
+  color: "#0D325C";
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 1.3rem;
+  width: 100%;
+  color: var(--lightBlue);
+}
+.content_table,
+.content_table td,
+.content_table th {
+  border: 2px solid rgb(199, 199, 199);
+  text-align: center;
+}
+.content_table th,
+.content_table td {
+  padding: 1rem 1rem;
+}
+.content_table th {
+  font-weight: 500;
+}
+.content_table td {
+  font-size: 1.1rem;
+}

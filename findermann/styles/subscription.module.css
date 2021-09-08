@@ -1,0 +1,86 @@
+/* pricing styling */
+
+.price_container {
+  max-width: unset;
+  width: 100%;
+}
+.price_card {
+  margin: 5% auto;
+  background-color: #1a508c;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 5px 5px 6px #00000033;
+  max-width: 310px;
+  width: 100%;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.price_body_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 50%;
+}
+
+/* this style is for all element inside price_header_container */
+.price_header_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  margin-bottom: 4%;
+  height: 4.5rem;
+}
+.price_category h3 {
+  color: #fffffffd;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.price_category .price_category_underline {
+  background-color: #ffffffd8;
+  height: 2px;
+  width: 25px;
+}
+.price_amount_details {
+  color: #ffffffd8;
+  text-align: center;
+}
+.price_amount_details .price_amount {
+  font-size: 0.9rem;
+}
+.price_amount_details .price_duration {
+  font-size: 0.7rem;
+}
+.price_listed_item {
+  color: #ffffffd8;
+  text-align: center;
+  padding: 0.3rem 0;
+  display: flex;
+  align-items: center;
+}
+.price_listed_item p {
+  margin: 0 0 0 2rem;
+}
+.subscribe_btn {
+  width: 100%;
+}
+/* end of pricing styling */
+
+@media screen and (min-width: 700px) {
+  .price_container {
+    display: grid;
+    grid-template-columns: repeat(2, 330px);
+    gap: 0 30px;
+  }
+}
+
+@media screen and (min-width: 1076px) {
+  .price_container {
+    display: grid;
+    grid-template-columns: repeat(3, 330px);
+    margin: 5% auto;
+    max-width: 1076px;
+  }
+}

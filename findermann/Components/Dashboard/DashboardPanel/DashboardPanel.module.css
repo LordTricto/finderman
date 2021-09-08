@@ -1,0 +1,84 @@
+.user_nav_pane {
+  background-color: var(--thick-blue);
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 15px;
+  padding: 2rem 0;
+  height: 100%;
+  width: 100%;
+  align-self: start;
+}
+
+.user_nav_pane__user_info_section__image {
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.user_nav_pane__user_info_section img {
+  width: 100%;
+  border-radius: 50%;
+  height: 100%;
+}
+.user_nav_pane__user_info_section__name {
+  text-align: center;
+  padding: 1rem 0;
+  color: var(--veryLightBlue);
+}
+
+.user_nav_pane__links li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--veryLightBlue);
+  text-decoration: none;
+  padding: 1rem 2rem;
+  background-color: #1a508c;
+  text-align: center;
+  border-bottom: 1px solid #ffffff21;
+  cursor: pointer;
+}
+.user_nav_pane__links :not(:first-child) {
+  margin-top: 0.05rem;
+}
+.iconDiv {
+  width: 3rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.icon {
+  text-align: center;
+  font-size: 1.25rem;
+}
+.user_nav_pane__links_content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+@media screen and (min-width: 500px) {
+  .user_nav_pane__links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+  }
+
+  .user_nav_pane__links li {
+    width: 100%;
+  }
+  .user_nav_pane__user_info_section__name {
+    font-size: 1rem;
+    padding: 1.2rem 0;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .user_nav_pane__links {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0px;
+    width: 100%;
+  }
+}

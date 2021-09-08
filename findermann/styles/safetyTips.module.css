@@ -1,0 +1,35 @@
+.container {
+  padding: 5rem 0.9rem;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.safety_tips_container {
+  background-color: var(--thick-blue);
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #ffffffd8;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 4%;
+}
+.safety_tips_content {
+  box-shadow: 0px 3px 6px #00000061;
+  border-radius: 10px;
+  min-height: 250px;
+  max-height: auto;
+  width: 100%;
+}
+
+@media screen and (min-width: 500px) {
+  .safety_tips_container {
+    padding: 3rem 1.2rem;
+    border-radius: 20px;
+    text-align: left;
+  }
+}

@@ -1,0 +1,116 @@
+.container {
+  padding: 1rem 0rem;
+}
+
+.post_person_box {
+  box-shadow: 0px 3px 6px #00000029;
+  padding: 4.5rem;
+  margin: auto 0;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+}
+.heading {
+  color: var(--thick-blue);
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+.post_person_box .heading {
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 0 0 1rem 0;
+}
+
+@media only screen and (min-width: 600px) {
+  .post_person_info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 40px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .submit_contact_btn {
+    display: inline-block;
+    width: 30%;
+    border-radius: 10px;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 22% auto;
+    max-width: unset;
+    column-gap: 20px;
+    width: 80vw;
+    max-width: 1500px;
+    margin: 2.5rem auto;
+    align-items: center;
+  }
+  .contact_us_info_pane {
+    height: 80%;
+    max-height: auto;
+    padding: 2rem;
+  }
+
+  .container .post_person_box.contactBox {
+    margin: 0;
+  }
+
+  .container.container-in-contactus {
+    max-width: 1200px;
+    justify-content: center;
+    grid-template-columns: 30% 50%;
+    gap: 0 70px;
+    align-items: unset;
+    padding: 4% 0;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .contact_us_info_pane {
+    height: 70%;
+    width: 90%;
+  }
+  .circle_box {
+    display: block;
+    height: 120px;
+    position: relative;
+    margin-top: 20%;
+  }
+
+  .blue_circle,
+  .light_pink_circle,
+  .purple_circle {
+    position: absolute;
+    border-radius: 50%;
+  }
+  .blue_circle {
+    background-color: #1a508c;
+    width: 90px;
+    height: 90px;
+    right: 20%;
+    z-index: 1;
+  }
+
+  .light_pink_circle {
+    width: 70px;
+    height: 70px;
+    background-color: #fff4e6;
+    z-index: 2;
+    right: 10%;
+    top: 35%;
+  }
+  .purple_circle {
+    width: 32px;
+    height: 32px;
+    background-color: #c1a1d3;
+    bottom: 0;
+    right: 10%;
+    z-index: 3;
+  }
+  .contact_us_info_pane_socials {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+}

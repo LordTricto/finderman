@@ -1,0 +1,28 @@
+.category {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 0.9rem;
+  height: 5rem;
+  background-color: #f9f1ed;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.category_icon {
+  font-size: 1.5rem;
+  color: #1a508c;
+}
+.category_link_icon {
+  margin-left: 1rem;
+}
+.category_content {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  color: var(--thick-blue);
+}

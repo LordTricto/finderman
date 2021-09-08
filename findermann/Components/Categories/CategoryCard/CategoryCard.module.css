@@ -1,0 +1,14 @@
+.popular_categories_item {
+  background-color: #fff4e6;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.9rem;
+  color: #0d325c;
+  margin: 5% 0;
+}
+.popular_categories_item p {
+  color: #0d325c;
+}

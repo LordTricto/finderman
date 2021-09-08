@@ -1,0 +1,96 @@
+/* footer section */
+
+.footer_container {
+  padding: 0 0.9rem 3rem 0.9rem;
+  color: white;
+}
+.footer_container #finderman-Logo {
+  margin: 6% 0;
+}
+#finderman-Logo {
+  font-weight: 500;
+}
+
+.footer_other_links {
+  padding: 1rem 0;
+}
+
+.other_link h4 {
+  font-size: 1.2rem;
+  padding: 1rem 0;
+  font-weight: 400;
+  text-align: left;
+}
+.other_link li {
+  list-style-type: none;
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: flex-start;
+}
+.other_link li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.6s ease-in-out;
+}
+.other_link li a:hover {
+  color: white;
+}
+
+.copywright_section {
+  color: #e6e6e6d8;
+  background-color: #1a508c;
+  text-align: center;
+  padding: 0.5rem 0.7rem;
+  width: 100%;
+}
+/* end of footer section */
+
+@media screen and (min-width: 370px) {
+  .footer_other_links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .footer_other_links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .footer_other_links {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .footer_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+  }
+  .footer_other_links {
+    width: 50rem;
+  }
+  #finderman-Logo {
+    font-size: 3rem;
+    padding-right: 2rem;
+  }
+}
+@media screen and (min-width: 1250px) {
+  .footer_container {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 1550px) {
+  .footer_container {
+    width: 70%;
+  }
+  #finderman-Logo {
+    font-size: 3rem;
+  }
+}

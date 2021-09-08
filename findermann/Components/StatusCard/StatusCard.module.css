@@ -1,0 +1,23 @@
+.owner_status_about_item {
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 10px;
+  margin: 7% 0;
+  width: 18rem;
+  background-color: white;
+}
+
+.owner_status_about_item .owner_status_about_item__content {
+  color: var(--thick-blue);
+  font-size: 1.4rem;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.owner_status_about_item .owner_status_about_item__heading {
+  background-color: #9f3831;
+  color: #ffffffd8;
+  padding: 0.4rem 0.9rem;
+  text-align: center;
+  font-size: 1.4rem;
+  border-radius: 10px 10px 0 0;
+}
