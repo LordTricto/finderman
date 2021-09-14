@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Navbar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronDown,
+  faBars,
+  // faUser,
+} from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-regular-svg-icons";
+import {} from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-
+import { useSelector } from "react-redux";
 const Navbar = () => {
   const [clickButton, setClickButton] = useState(true);
   const [filterName, setFilterName] = useState("Location");
-  // var filterName;
+  const loggedIn = useSelector((state) => state.user.loggedIn);
 
   const handleChange = () => {
     if (clickButton === true) {
@@ -45,11 +50,11 @@ const Navbar = () => {
                   <div className={styles["select-icon"]}>
                     <FontAwesomeIcon icon={faChevronDown} />
                   </div>
-                  <select className={styles.select} id="filter">
-                    <option value="" selected>
+                  <select className={styles.select} id="filter" value="a">
+                    <option value="a" selected>
                       Location
                     </option>
-                    <option value="">Hello World</option>
+                    <option value="b">Hello World</option>
                   </select>
                 </div>
 
@@ -164,14 +169,22 @@ const Navbar = () => {
               <div
                 className={`${styles["extra_links__links"]} ${styles["extra_links__links--spaceTwo"]}`}
               >
-                <li>
-                  <Link href="/login" passHref>
-                    Signin
-                  </Link>
-                  <Link href="/signup" passHref>
-                    /Register
-                  </Link>
-                </li>
+                {loggedIn ? (
+                  <li className={styles.extra_links__links_loggedIn}>
+                    <Link href="/userDashboard" passHref>
+                      <FontAwesomeIcon icon={faUser} />
+                    </Link>
+                  </li>
+                ) : (
+                  <li>
+                    <Link href="/login" passHref>
+                      Signin
+                    </Link>
+                    <Link href="/signup" passHref>
+                      /Register
+                    </Link>
+                  </li>
+                )}
                 <li
                   className={`${styles["extra_links__item"]} ${styles["extra_links__item--padding"]}`}
                 >

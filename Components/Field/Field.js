@@ -9,7 +9,8 @@ const Field = ({
   type,
   text,
   name,
-  dropDown,
+  func,
+  req,
   cols,
   rows,
   padding,
@@ -17,8 +18,12 @@ const Field = ({
   fontSize,
 }) => {
   const [clickButton, setClickButton] = useState(true);
+  // const [require, setRequire] = useState(false);
   const [filterName, setFilterName] = useState(text);
   // var filterName;
+  // useEffect(() => {
+  //   setRequire(required);
+  // }, [req]);
 
   const handleChange = () => {
     if (clickButton === true) {
@@ -41,11 +46,14 @@ const Field = ({
             type={type}
             placeholder={text}
             name={name}
+            onChange={func}
             style={{
               margin: margin,
               padding: padding,
               fontSize: fontSize,
             }}
+            required={req}
+            autoComplete="current-password"
           />
         </div>
         {/* <!-- End of Input Container --> */}

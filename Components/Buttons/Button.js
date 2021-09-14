@@ -14,19 +14,19 @@ const Button = ({
     <>
       {/* <!-- start of Button container --> */}
       <div className={styles.button}>
-        <Link href={`${to}`}>
-          <input
-            type="submit"
-            value={text}
-            style={{
-              width: width,
-              margin: margin,
-              padding: padding,
-              borderRadius: borderRadius,
-              fontSize: fontSize,
-            }}
-          ></input>
-        </Link>
+        {/* <Link href={`${to}`}> */}
+        <input
+          type="submit"
+          value={text}
+          style={{
+            width: width,
+            margin: margin,
+            padding: padding,
+            borderRadius: borderRadius,
+            fontSize: fontSize,
+          }}
+        ></input>
+        {/* </Link> */}
       </div>
       {/* <!-- end of Button container --> */}
     </>

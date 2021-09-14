@@ -305,6 +305,10 @@
     align-items: center;
     flex-direction: row;
   }
+  .extra_links__links_loggedIn {
+    width: 40%;
+    font-size: 1.5rem !important;
+  }
   .extra_links__links--spaceOne {
     width: fit-content;
   }
