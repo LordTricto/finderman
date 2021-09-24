@@ -6,9 +6,10 @@ import {
 } from "../userTypes/userTypes";
 const INITIAL_STATE = {
   loggedIn: false,
+  userInfo: [],
   accessToken: "",
-  message: "",
-  error: "",
+  errorMessage: "",
+  failure: "",
 };
 
 const userReducer = (state = INITIAL_STATE, action) => {
@@ -16,36 +17,40 @@ const userReducer = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       loggedIn: false,
+      userInfo: [],
       accessToken: "",
-      message: "",
-      error: "",
+      errorMessage: "",
+      failure: "",
     };
   }
   if (action.type === LOGIN_SUCCESS) {
     return {
       ...state,
       loggedIn: true,
-      accessToken: action.payload.accessToken,
-      message: "",
-      error: "",
+      userInfo: action.payload.userInfo.result,
+      accessToken: action.payload.userInfo.accessToken,
+      errorMessage: "",
+      failure: "",
     };
   }
   if (action.type === LOGIN_MESSAGE) {
     return {
       ...state,
       loggedIn: false,
+      userInfo: [],
       accessToken: "",
-      message: action.payload.message,
-      error: "",
+      errorMessage: action.payload.errorMessage,
+      failure: "",
     };
   }
   if (action.type === LOGIN_FAILURE) {
     return {
       ...state,
       loggedIn: false,
+      userInfo: [],
       accessToken: "",
-      message: "",
-      error: action.payload,
+      errorMessage: "",
+      failure: action.payload,
     };
   }
   return state;

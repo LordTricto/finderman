@@ -38,7 +38,7 @@
 .loginForm input[type="submit"]:focus {
   transform: translateY(0);
 }
-.login_error {
+.login_errorMessage {
   display: flex;
   width: 100%;
   padding-left: 0.5rem;

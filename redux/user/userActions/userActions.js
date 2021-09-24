@@ -5,7 +5,6 @@ import {
   LOGIN_MESSAGE,
 } from "../userTypes/userTypes";
 import { apiInstance } from "../../../utils/utils";
-import axios from "axios";
 
 export const loginRequest = () => {
   return {
@@ -13,26 +12,26 @@ export const loginRequest = () => {
   };
 };
 
-export const loginSuccess = (accessToken) => {
+export const loginSuccess = (userInfo) => {
   return {
     type: LOGIN_SUCCESS,
     payload: {
-      accessToken: accessToken,
+      userInfo: userInfo,
     },
   };
 };
-export const loginMessage = (message) => {
+export const loginErrorMessage = (message) => {
   return {
     type: LOGIN_MESSAGE,
     payload: {
-      message: message,
+      errorMessage: message,
     },
   };
 };
-export const loginFailure = (error) => {
+export const loginFailure = (failure) => {
   return {
     type: LOGIN_FAILURE,
-    payload: error,
+    payload: failure,
   };
 };
 export const login = ({ info }) => {
@@ -44,11 +43,11 @@ export const login = ({ info }) => {
         password: info.password,
       })
       .then((res) => {
-        const access_token = res.data.access_token;
+        const user_info = res.data;
         const message = res.data.message;
         res.data.status
-          ? dispatch(loginSuccess(access_token))
-          : dispatch(loginMessage(message));
+          ? dispatch(loginSuccess(user_info))
+          : dispatch(loginErrorMessage(message));
       })
       .catch((err) => dispatch(loginFailure(err)));
   };

@@ -25,8 +25,8 @@ export default function Home() {
   const [accessToken, setAccessToken] = useState();
   const router = useRouter();
   const dispatch = useDispatch();
-  const error = useSelector((state) => state.user.error);
-  const message = useSelector((state) => state.user.message);
+  const failure = useSelector((state) => state.user.failure);
+  const errorMessage = useSelector((state) => state.user.errorMessage);
   const loggedIn = useSelector((state) => state.user.loggedIn);
 
   useEffect(() => {
@@ -49,7 +49,7 @@ export default function Home() {
     dispatch(login({ info }));
   };
 
-  console.log(message);
+  console.log(errorMessage);
 
   return (
     <>
@@ -80,9 +80,9 @@ export default function Home() {
             margin="1rem 0"
             func={(e) => handleConfig(e)}
           />
-          {message && (
-            <div className={styles.login_error}>
-              <p className={styles.login_message}>* {message}</p>
+          {errorMessage && (
+            <div className={styles.login_errorMessage}>
+              <p className={styles.login_message}>* {errorMessage}</p>
             </div>
           )}
 

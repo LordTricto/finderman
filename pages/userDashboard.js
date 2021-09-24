@@ -2,12 +2,16 @@ import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { useSelector } from "react-redux";
+import States from "../utils/states";
 import styles from "../styles/userDashboard.module.css";
 import Field from "../Components/Field/Field";
 import Button from "../Components/Buttons/Button";
 import DashboardPanel from "../Components/Dashboard/DashboardPanel/DashboardPanel";
-import { useSelector } from "react-redux";
+
 function userDashboard() {
+  const user = useSelector((state) => state.user.userInfo);
+  console.log(user);
   return (
     <>
       <div className={styles.container}>
@@ -18,14 +22,14 @@ function userDashboard() {
           <form action="" id="">
             <div className={styles.post_person_info}>
               <Field
-                text="First Name"
+                text={user.firstName}
                 type="text"
                 name="fName"
                 fieldType="Input"
               />
 
               <Field
-                text="Last Name"
+                text={user.lastName}
                 type="text"
                 name="lName"
                 fieldType="Input"
@@ -34,16 +38,21 @@ function userDashboard() {
               <Field text="Email" type="email" name="email" fieldType="Input" />
 
               <Field
-                text="Phone Number"
+                text={user.phoneNumber}
                 type="text"
                 name="phoneNumber"
                 fieldType="Input"
               />
 
-              <Field text="Name" type="text" name="name" fieldType="Input" />
+              <Field
+                text="User Name"
+                type="text"
+                name="name"
+                fieldType="Input"
+              />
 
               <Field
-                text="Address"
+                text={user.address}
                 type="text"
                 name="address"
                 fieldType="Input"
@@ -54,7 +63,7 @@ function userDashboard() {
                 type="text"
                 name="state"
                 fieldType="Select"
-                dropDown
+                data={States}
               />
             </div>
 

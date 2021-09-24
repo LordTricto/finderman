@@ -16,6 +16,7 @@ const Field = ({
   padding,
   margin,
   fontSize,
+  data,
 }) => {
   const [clickButton, setClickButton] = useState(true);
   // const [require, setRequire] = useState(false);
@@ -36,7 +37,7 @@ const Field = ({
     console.log(e.target.innerText);
     setFilterName(e.target.innerText);
   };
-
+  // console.log(text);
   if (fieldType == "Input") {
     return (
       <>
@@ -44,7 +45,7 @@ const Field = ({
         <div className={styles.input_box}>
           <input
             type={type}
-            placeholder={text}
+            placeholder={`${text}`}
             name={name}
             onChange={func}
             style={{
@@ -95,9 +96,9 @@ const Field = ({
               setClickButton(false);
             }}
           >
-            <li onClick={changeFilter}>Location</li>
-            <li onClick={changeFilter}>Missing</li>
-            <li onClick={changeFilter}>Found</li>
+            {data.map((item) => {
+              return <li onClick={changeFilter}>{item.value}</li>;
+            })}
           </ul>
         </div>
 
