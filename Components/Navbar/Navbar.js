@@ -179,7 +179,7 @@ const Navbar = () => {
                     <span
                       onClick={() => {
                         dispatch(logout());
-                        !loggedIn && router.push("/userdashboard");
+                        router.push("/");
                       }}
                     >
                       LogOut

@@ -9,9 +9,12 @@ import Field from "../Components/Field/Field";
 import Button from "../Components/Buttons/Button";
 import DashboardPanel from "../Components/Dashboard/DashboardPanel/DashboardPanel";
 
+// export const getStaticProps = async () => {
+//   const res = await fetch("");
+// };
+
 function UserDashboard() {
-  const user = useSelector((state) => state.user.userInfo); // eslint-disable-line react-hooks/exhaustive-deps
-  console.log(user);
+  const user = useSelector((state) => state.user.userInfo);
   return (
     <>
       <div className={styles.container}>
@@ -40,6 +43,7 @@ function UserDashboard() {
                 type="email"
                 name="email"
                 fieldType="Input"
+                disable
               />
 
               <Field

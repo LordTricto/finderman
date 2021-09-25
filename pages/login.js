@@ -6,10 +6,10 @@ import styles from "../styles/Login.module.css";
 import Link from "next/link";
 import Field from "../Components/Field/Field";
 import { apiInstance } from "../utils/utils";
-import { login } from "../redux/user/userActions/userActions";
+import { loginSuccess } from "../redux/user/userActions/userActions";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { SET_CURRENT_USER } from "../redux/user/userTypes/userTypes";
+
 // export const getStaticProps = async () = {
 //   const res = await
 // }
@@ -21,10 +21,9 @@ const loginConfig = {
 
 export default function Login() {
   const [info, setInfo] = useState({ ...loginConfig });
+  const [errorMessage, setErrorMessage] = useState();
   const router = useRouter();
   const dispatch = useDispatch();
-  const failure = useSelector((state) => state.user.failure);
-  const errorMessage = useSelector((state) => state.user.errorMessage);
   const loggedIn = useSelector((state) => state.user.loggedIn);
 
   useEffect(() => {
@@ -44,7 +43,19 @@ export default function Login() {
     if (!info.password || !info.email === "-") {
       return null;
     }
-    dispatch(login({ info }));
+    apiInstance
+      .post("/api/v1/user/login", {
+        email: info.email,
+        password: info.password,
+      })
+      .then((res) => {
+        const user_info = res.data;
+        const error_message = res.data.message;
+        res.data.status === "success"
+          ? dispatch(loginSuccess(user_info))
+          : setErrorMessage(error_message);
+      })
+      .catch((err) => console.log(err));
   };
 
   return (

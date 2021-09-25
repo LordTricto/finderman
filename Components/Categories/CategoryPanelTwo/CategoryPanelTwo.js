@@ -2,6 +2,8 @@ import styles from "./CategoryPanelTwo.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import Field from "../../Field/Field";
+import States from "../../../utils/states";
+import FilterType from "../../../utils/typeFIlter";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -17,7 +19,6 @@ import {
   faHamburger,
   faWrench,
   faToolbox,
-  faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -50,13 +51,20 @@ const CategoryPanel = () => {
                 type="text"
                 name="location"
                 fieldType="Select"
+                data={States}
               />
             </form>
           </div>
           <div className={styles.type}>
             <p>Filter By Type</p>
             <form action="">
-              <Field text="Type" type="text" name="type" fieldType="Select" />
+              <Field
+                text="Type"
+                type="text"
+                name="type"
+                fieldType="Select"
+                data={FilterType}
+              />
             </form>
           </div>
         </div>

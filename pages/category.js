@@ -4,14 +4,6 @@ import Link from "next/link";
 import styles from "../styles/category.module.css";
 import CategoryNav from "../Components/Categories/CategoryPanelTwo/CategoryPanelTwo";
 import CategoryItem from "../Components/Categories/CategoryItem/CategoryItem";
-import Field from "../Components/Field/Field";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronRight,
-  faDog,
-  faPhone,
-  faToolbox,
-} from "@fortawesome/free-solid-svg-icons";
 
 export default function Category() {
   return (

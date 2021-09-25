@@ -7,10 +7,9 @@ import States from "../utils/states";
 import Button from "../Components/Buttons/Button";
 import Field from "../Components/Field/Field";
 import { apiInstance } from "../utils/utils";
-import { signUp } from "../redux/user/userActions/userActions";
+import { loginSuccess } from "../redux/user/userActions/userActions";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { SET_CURRENT_USER } from "../redux/user/userTypes/userTypes";
 
 const SignupConfig = {
   firstName: "",
@@ -64,11 +63,30 @@ export default function Register() {
       !info.password ||
       !info.stateInfo === "-"
     ) {
-      return console.log("nope");
+      return null;
     }
-    dispatch(signUp({ info, stateInfo }));
+    // dispatch(signUp({ info, stateInfo }));
+    apiInstance
+      .post("/api/v1/user/register", {
+        firstName: info.firstName,
+        lastName: info.lastName,
+        email: info.email,
+        phoneNumber: info.phoneNumber,
+        address: info.address,
+        password: info.password,
+        username: info.username,
+        state: stateInfo.state,
+      })
+      .then((res) => {
+        const user_info = res.data;
+        const error_message = res.data.message;
+        res.data.status === "success"
+          ? dispatch(loginSuccess(user_info))
+          : setErrorMessage(error_message);
+      })
+      .catch((err) => console.log(err));
   };
-  console.log(info);
+
   return (
     <>
       {/* <!-- start of container --> */}
