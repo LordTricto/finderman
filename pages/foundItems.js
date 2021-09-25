@@ -13,7 +13,7 @@ import {
   faToolbox,
 } from "@fortawesome/free-solid-svg-icons";
 
-const foundItems = () => {
+const FoundItems = () => {
   return (
     <>
       <div className={styles.content}>
@@ -199,4 +199,4 @@ const foundItems = () => {
   );
 };
 
-export default foundItems;
+export default FoundItems;

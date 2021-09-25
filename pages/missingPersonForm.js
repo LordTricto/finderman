@@ -2,7 +2,7 @@ import Field from "../Components/Field/Field";
 import ImageUpload from "../Components/ImageCard/ImageCard";
 import Button from "../Components/Buttons/Button";
 
-function missingPersonForm() {
+function MissingPersonForm() {
   return (
     <div>
       <>
@@ -129,4 +129,4 @@ function missingPersonForm() {
   );
 }
 
-export default missingPersonForm;
+export default MissingPersonForm;

@@ -3,7 +3,7 @@ import Button from "../Components/Buttons/Button";
 import styles from "../styles/forgotPassword.module.css";
 import Field from "../Components/Field/Field";
 
-export default function Home() {
+export default function ForgotPassword() {
   return (
     <>
       {/* <!-- start of container --> */}

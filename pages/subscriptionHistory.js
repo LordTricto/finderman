@@ -5,7 +5,7 @@ import Button from "../Components/Buttons/Button";
 import DashboardPanel from "../Components/Dashboard/DashboardPanel/DashboardPanel";
 import DashboardTable from "../Components/Dashboard/DashboardTable/DashboardTable";
 
-function subscriptionHistory() {
+function SubscriptionHistory() {
   return (
     <>
       {/* start of container */}
@@ -25,4 +25,4 @@ function subscriptionHistory() {
   );
 }
 
-export default subscriptionHistory;
+export default SubscriptionHistory;

@@ -17,7 +17,7 @@ import {
 
 // import { SliderData } from "../Components/data";
 
-function missingItem() {
+function MissingItem() {
   return (
     <>
       {/* start of container */}
@@ -225,4 +225,4 @@ function missingItem() {
   );
 }
 
-export default missingItem;
+export default MissingItem;

@@ -10,7 +10,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function contactUs() {
+function ContactUs() {
   return (
     <div>
       {/* start of container */}
@@ -113,4 +113,4 @@ function contactUs() {
   );
 }
 
-export default contactUs;
+export default ContactUs;

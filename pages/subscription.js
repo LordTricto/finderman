@@ -5,7 +5,7 @@ import styles from "../styles/subscription.module.css";
 import Button from "../Components/Buttons/Button";
 import Image from "next/image";
 
-function subscription() {
+function Subscription() {
   return (
     <>
       {/* start of container */}
@@ -121,4 +121,4 @@ function subscription() {
   );
 }
 
-export default subscription;
+export default Subscription;

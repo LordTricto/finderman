@@ -17,7 +17,7 @@ import {
 
 // import { SliderData } from "./data";
 
-function foundItem() {
+function FoundItem() {
   return (
     <>
       {/* start of container */}
@@ -219,4 +219,4 @@ function foundItem() {
   );
 }
 
-export default foundItem;
+export default FoundItem;

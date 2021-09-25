@@ -108,4 +108,4 @@ function UpdateMissingItem() {
   );
 }
 
-export default updateMissingItem;
+export default UpdateMissingItem;

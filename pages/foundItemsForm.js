@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../styles/foundItemsForm.module.css";
 import Field from "../Components/Field/Field";
 import Button from "../Components/Buttons/Button";
-const foundItemsForm = () => {
+const FoundItemsForm = () => {
   return (
     <>
       <div className="container">
@@ -108,4 +108,4 @@ const foundItemsForm = () => {
   );
 };
 
-export default foundItemsForm;
+export default FoundItemsForm;

@@ -6,7 +6,7 @@ import {
   faMapMarkedAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
-const postItem = () => {
+const PostItem = () => {
   return (
     <>
       <div className={styles.container}>
@@ -38,4 +38,4 @@ const postItem = () => {
   );
 };
 
-export default postItem;
+export default PostItem;

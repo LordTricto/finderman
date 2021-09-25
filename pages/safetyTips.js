@@ -1,5 +1,5 @@
 import styles from "../styles/safetyTips.module.css";
-function safetyTips() {
+function SafetyTips() {
   return (
     <>
       {/* start of container */}
@@ -16,4 +16,4 @@ function safetyTips() {
   );
 }
 
-export default safetyTips;
+export default SafetyTips;

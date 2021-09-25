@@ -6,7 +6,7 @@ import Button from "../Components/Buttons/Button";
 import Field from "../Components/Field/Field";
 import Image from "next/image";
 
-function checkout() {
+function Checkout() {
   return (
     <>
       {/* start of container */}
@@ -94,4 +94,4 @@ function checkout() {
   );
 }
 
-export default checkout;
+export default Checkout;

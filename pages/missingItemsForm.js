@@ -3,7 +3,7 @@ import Field from "../Components/Field/Field";
 import ImageUpload from "../Components/ImageCard/ImageCard";
 import Button from "../Components/Buttons/Button";
 
-function missingItemsForm() {
+function MissingItemsForm() {
   return (
     <div>
       <>
@@ -124,4 +124,4 @@ function missingItemsForm() {
   );
 }
 
-export default missingItemsForm;
+export default MissingItemsForm;

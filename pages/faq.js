@@ -1,5 +1,5 @@
 import styles from "../styles/faq.module.css";
-function faq() {
+function Faq() {
   return (
     <>
       {/* start of container */}
@@ -16,4 +16,4 @@ function faq() {
   );
 }
 
-export default faq;
+export default Faq;

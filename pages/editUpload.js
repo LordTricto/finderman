@@ -3,7 +3,7 @@ import Field from "../Components/Field/Field";
 import UploadCard from "../Components/UploadCard/UploadCard";
 import DashboardPanel from "../Components/Dashboard/DashboardPanel/DashboardPanel";
 
-function editUpload() {
+function EditUpload() {
   return (
     <>
       {/* start of container */}
@@ -24,4 +24,4 @@ function editUpload() {
   );
 }
 
-export default editUpload;
+export default EditUpload;

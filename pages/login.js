@@ -19,7 +19,7 @@ const loginConfig = {
   password: "",
 };
 
-export default function Home() {
+export default function Login() {
   const [info, setInfo] = useState({ ...loginConfig });
   const router = useRouter();
   const dispatch = useDispatch();

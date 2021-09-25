@@ -4,7 +4,7 @@ import Field from "../Components/Field/Field";
 import Button from "../Components/Buttons/Button";
 import DashboardPanel from "../Components/Dashboard/DashboardPanel/DashboardPanel";
 
-function changePassword() {
+function ChangePassword() {
   return (
     <>
       {/* start of container */}
@@ -60,4 +60,4 @@ function changePassword() {
   );
 }
 
-export default changePassword;
+export default ChangePassword;
