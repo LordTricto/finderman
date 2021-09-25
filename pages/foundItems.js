@@ -27,7 +27,6 @@ const foundItems = () => {
                 type="text"
                 name="location"
                 fieldType="Select"
-                dropDown
               />
             </form>
 

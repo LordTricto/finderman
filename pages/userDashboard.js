@@ -35,7 +35,12 @@ function userDashboard() {
                 fieldType="Input"
               />
 
-              <Field text="Email" type="email" name="email" fieldType="Input" />
+              <Field
+                text={user.email}
+                type="email"
+                name="email"
+                fieldType="Input"
+              />
 
               <Field
                 text={user.phoneNumber}
@@ -45,7 +50,7 @@ function userDashboard() {
               />
 
               <Field
-                text="User Name"
+                text={user.username}
                 type="text"
                 name="name"
                 fieldType="Input"
@@ -59,7 +64,7 @@ function userDashboard() {
               />
 
               <Field
-                text="State"
+                text={user.state}
                 type="text"
                 name="state"
                 fieldType="Select"

@@ -139,7 +139,6 @@ const Navbar = () => {
                     <li onClick={changeFilter}>Found</li>
                   </ul>
                 </div>
-
                 {/* <!-- end of select continer --> */}
               </div>
               <button className={`${styles.btn} ${styles.nav_search}`}>
@@ -171,7 +170,7 @@ const Navbar = () => {
               >
                 {loggedIn ? (
                   <li className={styles.extra_links__links_loggedIn}>
-                    <Link href="/userDashboard" passHref>
+                    <Link href="/userdashboard" passHref>
                       <FontAwesomeIcon icon={faUser} />
                     </Link>
                   </li>

@@ -6,7 +6,7 @@ import styles from "../styles/Login.module.css";
 import Link from "next/link";
 import Field from "../Components/Field/Field";
 import { apiInstance } from "../utils/utils";
-import { login, userLoggedIn } from "../redux/user/userActions/userActions";
+import { login } from "../redux/user/userActions/userActions";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { SET_CURRENT_USER } from "../redux/user/userTypes/userTypes";
@@ -14,15 +14,13 @@ import { SET_CURRENT_USER } from "../redux/user/userTypes/userTypes";
 //   const res = await
 // }
 
-const config = {
+const loginConfig = {
   email: "",
   password: "",
 };
 
 export default function Home() {
-  const [info, setInfo] = useState({ ...config });
-  // const [message, setMessage] = useState();
-  const [accessToken, setAccessToken] = useState();
+  const [info, setInfo] = useState({ ...loginConfig });
   const router = useRouter();
   const dispatch = useDispatch();
   const failure = useSelector((state) => state.user.failure);
@@ -30,7 +28,7 @@ export default function Home() {
   const loggedIn = useSelector((state) => state.user.loggedIn);
 
   useEffect(() => {
-    loggedIn ? router.push("/userDashboard") : null;
+    loggedIn ? router.push("/userdashboard") : null;
   }, [loggedIn]);
 
   const handleConfig = (e) => {
@@ -48,8 +46,6 @@ export default function Home() {
     }
     dispatch(login({ info }));
   };
-
-  console.log(errorMessage);
 
   return (
     <>
@@ -76,6 +72,7 @@ export default function Home() {
             text="Password"
             type="password"
             name="password"
+            length="8"
             fieldType="Input"
             margin="1rem 0"
             func={(e) => handleConfig(e)}

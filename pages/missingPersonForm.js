@@ -20,7 +20,6 @@ function missingPersonForm() {
                   type="text"
                   name="category"
                   fieldType="Select"
-                  dropDown
                 />
 
                 <Field
@@ -28,7 +27,6 @@ function missingPersonForm() {
                   type="text"
                   name="subCategory"
                   fieldType="Select"
-                  dropDown
                 />
 
                 <Field
@@ -57,7 +55,6 @@ function missingPersonForm() {
                   type="text"
                   name="state"
                   fieldType="Select"
-                  dropDown
                 />
 
                 <Field
@@ -72,7 +69,6 @@ function missingPersonForm() {
                   type="text"
                   name="localGovernment"
                   fieldType="Select"
-                  dropDown
                 />
 
                 <Field
@@ -87,7 +83,6 @@ function missingPersonForm() {
                   type="text"
                   name="status"
                   fieldType="Select"
-                  dropDown
                 />
 
                 <Field
@@ -95,7 +90,6 @@ function missingPersonForm() {
                   type="text"
                   name="contactMethod"
                   fieldType="Select"
-                  dropDown
                 />
               </div>
 

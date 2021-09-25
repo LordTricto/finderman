@@ -21,7 +21,6 @@ const foundItemsForm = () => {
               padding="1.2rem 2rem"
               fontSize="1rem"
               fieldType="Select"
-              dropDown
             />
 
             <Field
@@ -31,7 +30,6 @@ const foundItemsForm = () => {
               padding="1.2rem 2rem"
               fontSize="1rem"
               fieldType="Select"
-              dropDown
             />
 
             <Field
@@ -68,7 +66,6 @@ const foundItemsForm = () => {
               padding="1.2rem 2rem"
               fontSize="1rem"
               fieldType="Select"
-              dropDown
             />
 
             <Field
@@ -87,7 +84,6 @@ const foundItemsForm = () => {
               padding="1.2rem 2rem"
               fontSize="1rem"
               fieldType="Select"
-              dropDown
             />
 
             <Field

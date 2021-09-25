@@ -38,7 +38,7 @@ const DashboardPanel = () => {
             </Link>
           </li>
           <li>
-            <Link href="/editUploadPage" passHref>
+            <Link href="/editupload" passHref>
               <div className={styles.user_nav_pane__links_content}>
                 <div className={styles.iconDiv}>
                   <FontAwesomeIcon icon={faUserEdit} className={styles.icon} />

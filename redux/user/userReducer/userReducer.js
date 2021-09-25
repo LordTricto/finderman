@@ -3,6 +3,7 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
   LOGIN_MESSAGE,
+  LOGOUT_SUCCESS,
 } from "../userTypes/userTypes";
 const INITIAL_STATE = {
   loggedIn: false,
@@ -27,8 +28,8 @@ const userReducer = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       loggedIn: true,
-      userInfo: action.payload.userInfo.result,
-      accessToken: action.payload.userInfo.accessToken,
+      userInfo: action.payload.userInfo.message,
+      accessToken: action.payload.userInfo.access_token,
       errorMessage: "",
       failure: "",
     };
@@ -51,6 +52,12 @@ const userReducer = (state = INITIAL_STATE, action) => {
       accessToken: "",
       errorMessage: "",
       failure: action.payload,
+    };
+  }
+  if (action.type === LOGOUT_SUCCESS) {
+    return {
+      ...state,
+      loggedIn: false,
     };
   }
   return state;

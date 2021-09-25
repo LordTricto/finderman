@@ -19,14 +19,12 @@ function updateMissingItem() {
                 type="text"
                 name="category"
                 fieldType="Select"
-                dropDown
               />
               <Field
                 text="Sub-Category"
                 type="text"
                 name="subCategory"
                 fieldType="Select"
-                dropDown
               />
               <Field
                 text="Name of item"
@@ -42,13 +40,7 @@ function updateMissingItem() {
               />
               <Field text="Email" type="text" name="email" fieldType="Input" />
 
-              <Field
-                text="State"
-                type="text"
-                name="state"
-                fieldType="Select"
-                dropDown
-              />
+              <Field text="State" type="text" name="state" fieldType="Select" />
               <Field
                 text="Phone Number"
                 type="text"
@@ -60,7 +52,6 @@ function updateMissingItem() {
                 type="text"
                 name="localGovernment"
                 fieldType="Select"
-                dropDown
               />
               <Field
                 text="Reward:"
@@ -73,7 +64,6 @@ function updateMissingItem() {
                 type="text"
                 name="status"
                 fieldType="Select"
-                dropDown
               />
               <Field
                 text="Police Station to report missing item:"
@@ -86,7 +76,6 @@ function updateMissingItem() {
                 type="text"
                 name="contactMethod"
                 fieldType="Select"
-                dropDown
               />
             </div>
 

@@ -306,8 +306,14 @@
     flex-direction: row;
   }
   .extra_links__links_loggedIn {
+    display: flex;
+    flex-direction: row;
     width: 40%;
     font-size: 1.5rem !important;
+  }
+  .extra_links__links_loggedIn span {
+    padding-left: 0.5rem;
+    font-size: 0.85rem !important;
   }
   .extra_links__links--spaceOne {
     width: fit-content;

@@ -10,6 +10,7 @@ const Field = ({
   text,
   name,
   func,
+  length,
   req,
   cols,
   rows,
@@ -34,7 +35,6 @@ const Field = ({
     }
   };
   const changeFilter = (e) => {
-    console.log(e.target.innerText);
     setFilterName(e.target.innerText);
   };
   // console.log(text);
@@ -53,6 +53,7 @@ const Field = ({
               padding: padding,
               fontSize: fontSize,
             }}
+            minlength={length}
             required={req}
             autoComplete="current-password"
           />
@@ -83,7 +84,7 @@ const Field = ({
           >
             <FontAwesomeIcon icon={faChevronDown} />
           </span>
-          {filterName}
+          {filterName ? filterName : "State"}
           <ul
             className={`${styles.select_container_options} 
                     ${
@@ -97,7 +98,18 @@ const Field = ({
             }}
           >
             {data.map((item) => {
-              return <li onClick={changeFilter}>{item.value}</li>;
+              return (
+                <li
+                  onClick={(e) => {
+                    changeFilter(e);
+                    {
+                      func(e);
+                    }
+                  }}
+                >
+                  {item.value}
+                </li>
+              );
             })}
           </ul>
         </div>

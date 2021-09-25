@@ -83,13 +83,7 @@ function contactUs() {
               fieldType="Input"
             />
 
-            <Field
-              text="State"
-              type="text"
-              name="state"
-              fieldType="Select"
-              dropDown
-            />
+            <Field text="State" type="text" name="state" fieldType="Select" />
 
             <Field
               text="Message"

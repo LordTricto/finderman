@@ -3,6 +3,7 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
   LOGIN_MESSAGE,
+  LOGOUT_SUCCESS,
 } from "../userTypes/userTypes";
 import { apiInstance } from "../../../utils/utils";
 
@@ -34,6 +35,13 @@ export const loginFailure = (failure) => {
     payload: failure,
   };
 };
+
+export const logoutSuccess = () => {
+  return {
+    type: LOGOUT_SUCCESS,
+  };
+};
+
 export const login = ({ info }) => {
   return (dispatch) => {
     dispatch(loginRequest);
@@ -44,11 +52,40 @@ export const login = ({ info }) => {
       })
       .then((res) => {
         const user_info = res.data;
-        const message = res.data.message;
-        res.data.status
+        const error_message = res.data.message;
+        res.data.status === "success"
           ? dispatch(loginSuccess(user_info))
-          : dispatch(loginErrorMessage(message));
+          : dispatch(loginErrorMessage(error_message));
       })
       .catch((err) => dispatch(loginFailure(err)));
+  };
+};
+export const signUp = ({ info, stateInfo }) => {
+  return (dispatch) => {
+    dispatch(loginRequest);
+    apiInstance
+      .post("/api/v1/user/register", {
+        firstName: info.firstName,
+        lastName: info.lastName,
+        email: info.email,
+        phoneNumber: info.phoneNumber,
+        address: info.address,
+        password: info.password,
+        username: info.username,
+        state: stateInfo.state,
+      })
+      .then((res) => {
+        const user_info = res.data;
+        const error_message = res.data.message;
+        res.data.status === "success"
+          ? dispatch(loginSuccess(user_info))
+          : dispatch(loginErrorMessage(error_message));
+      })
+      .catch((err) => dispatch(loginFailure(err)));
+  };
+};
+export const logout = () => {
+  return (dispatch) => {
+    dispatch(logoutSuccess());
   };
 };

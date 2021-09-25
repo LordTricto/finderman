@@ -50,20 +50,13 @@ const CategoryPanel = () => {
                 type="text"
                 name="location"
                 fieldType="Select"
-                dropDown
               />
             </form>
           </div>
           <div className={styles.type}>
             <p>Filter By Type</p>
             <form action="">
-              <Field
-                text="Type"
-                type="text"
-                name="type"
-                fieldType="Select"
-                dropDown
-              />
+              <Field text="Type" type="text" name="type" fieldType="Select" />
             </form>
           </div>
         </div>
