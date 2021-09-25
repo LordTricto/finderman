@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import styles from "./Navbar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronDown,
-  faBars,
-  // faUser,
-} from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faBars } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
-import {} from "@fortawesome/free-solid-svg-icons";
-import Link from "next/link";
+
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { logout } from "../../redux/user/userActions/userActions";
+
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const router = useRouter();
   const [clickButton, setClickButton] = useState(true);
   const [filterName, setFilterName] = useState("Location");
   const loggedIn = useSelector((state) => state.user.loggedIn);
@@ -22,11 +24,12 @@ const Navbar = () => {
       setClickButton(true);
     }
   };
+
   const changeFilter = (e) => {
     console.log(e.target.innerText);
     setFilterName(e.target.innerText);
   };
-
+  console.log(loggedIn);
   return (
     <>
       {/* <!-- start of nav --> */}
@@ -173,13 +176,21 @@ const Navbar = () => {
                     <Link href="/userdashboard" passHref>
                       <FontAwesomeIcon icon={faUser} />
                     </Link>
+                    <span
+                      onClick={() => {
+                        dispatch(logout());
+                        !loggedIn && router.push("/userdashboard");
+                      }}
+                    >
+                      LogOut
+                    </span>
                   </li>
                 ) : (
                   <li>
                     <Link href="/login" passHref>
                       Signin
                     </Link>
-                    <Link href="/signup" passHref>
+                    <Link href="/register" passHref>
                       /Register
                     </Link>
                   </li>
