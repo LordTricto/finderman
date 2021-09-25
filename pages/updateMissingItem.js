@@ -1,7 +1,7 @@
 import Field from "../Components/Field/Field";
 import ImageUpload from "../Components/ImageCard/ImageCard";
 import Button from "../Components/Buttons/Button";
-function updateMissingItem() {
+function UpdateMissingItem() {
   return (
     <>
       <div className="container">

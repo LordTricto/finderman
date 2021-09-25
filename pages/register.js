@@ -12,7 +12,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { SET_CURRENT_USER } from "../redux/user/userTypes/userTypes";
 
-const signupConfig = {
+const SignupConfig = {
   firstName: "",
   lastName: "",
   email: "",
@@ -21,13 +21,13 @@ const signupConfig = {
   password: "",
   username: "",
 };
-const signupStateConfig = {
+const SignupStateConfig = {
   state: "",
 };
 
-export default function register() {
-  const [info, setInfo] = useState({ ...signupConfig });
-  const [stateInfo, setStateInfo] = useState({ ...signupStateConfig });
+export default function Register() {
+  const [info, setInfo] = useState({ ...SignupConfig });
+  const [stateInfo, setStateInfo] = useState({ ...SignupStateConfig });
   const router = useRouter();
   const dispatch = useDispatch();
   const loggedIn = useSelector((state) => state.user.loggedIn);

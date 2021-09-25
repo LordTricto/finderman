@@ -1,7 +1,6 @@
 import styles from "./CategoryItem.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
 const CategoryItem = ({
   imageSrc,
   itemStatus,
@@ -12,9 +11,6 @@ const CategoryItem = ({
   to,
   itemAd,
 }) => {
-  useEffect(() => {
-    console.log(to);
-  }, []);
   return (
     <>
       {/* start of item */}

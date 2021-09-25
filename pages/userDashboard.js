@@ -9,8 +9,8 @@ import Field from "../Components/Field/Field";
 import Button from "../Components/Buttons/Button";
 import DashboardPanel from "../Components/Dashboard/DashboardPanel/DashboardPanel";
 
-function userDashboard() {
-  const user = useSelector((state) => state.user.userInfo);
+function UserDashboard() {
+  const user = useSelector((state) => state.user.userInfo); // eslint-disable-line react-hooks/exhaustive-deps
   console.log(user);
   return (
     <>
@@ -86,4 +86,4 @@ function userDashboard() {
   );
 }
 
-export default userDashboard;
+export default UserDashboard;

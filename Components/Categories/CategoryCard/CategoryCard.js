@@ -36,7 +36,7 @@ library.add(
 const CategoryCard = ({ text, icon, to }) => {
   return (
     <>
-      <Link href={to}>
+      <Link href={to} passHref>
         <div className={styles.popular_categories_item}>
           <FontAwesomeIcon icon={icon} />
           <p>{text}</p>

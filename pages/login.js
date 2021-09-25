@@ -29,7 +29,7 @@ export default function Home() {
 
   useEffect(() => {
     loggedIn ? router.push("/userdashboard") : null;
-  }, [loggedIn]);
+  }, [loggedIn]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleConfig = (e) => {
     const { name, value } = e.target;

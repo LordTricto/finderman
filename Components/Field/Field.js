@@ -53,7 +53,7 @@ const Field = ({
               padding: padding,
               fontSize: fontSize,
             }}
-            minlength={length}
+            minLength={length}
             required={req}
             autoComplete="current-password"
           />
@@ -97,9 +97,10 @@ const Field = ({
               setClickButton(false);
             }}
           >
-            {data.map((item) => {
+            {data.map((item, index) => {
               return (
                 <li
+                  key={index}
                   onClick={(e) => {
                     changeFilter(e);
                     {
