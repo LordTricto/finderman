@@ -13,7 +13,7 @@ const PostItem = () => {
         {/* start of missing_or_found_container */}
         <div className={styles.missing_or_found_container}>
           {/* start of missing_div */}
-          <Link href="/" passHref>
+          <Link href="/missingitemform" passHref>
             <div className={styles.missing_div}>
               <div>
                 <FontAwesomeIcon icon={faQuestionCircle} />
@@ -22,7 +22,7 @@ const PostItem = () => {
             </div>
           </Link>
           <div className={styles.middleLine}></div>
-          <Link href="/foundItems" passHref>
+          <Link href="/founditemform" passHref>
             <div className={styles.missing_div}>
               <div>
                 <FontAwesomeIcon icon={faMapMarkedAlt} />

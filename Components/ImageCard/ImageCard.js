@@ -4,7 +4,7 @@ import { faImage } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import styles from "./ImageCard.module.css";
 
-const ImageCard = ({ width, height }) => {
+const ImageCard = ({ width, height, func }) => {
   const [image, setImage] = useState();
   const [preview, setPreview] = useState();
   const fileInputRef = useRef();
@@ -67,6 +67,7 @@ const ImageCard = ({ width, height }) => {
             } else {
               setImage(null);
             }
+            func(file);
           }}
         />
       </div>

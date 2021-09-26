@@ -85,7 +85,7 @@ const ItemForm = () => {
         console.log("done");
         //Redirect
         setInterval(() => {
-          router.push("/userdashboard");
+          router.push("/postitem");
         }, 1000);
       })
       .catch((err) => console.log(err));

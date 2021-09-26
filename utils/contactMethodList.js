@@ -6,8 +6,8 @@ const ContactMethodList = [
   },
   {
     name: "contactMethod",
-    value: "Video Call",
-    label: "Video Call",
+    value: "Call",
+    label: "Call",
   },
 ];
 

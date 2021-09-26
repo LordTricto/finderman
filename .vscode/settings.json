@@ -1,3 +1,10 @@
 {
-  "cSpell.words": ["fortawesome", "itemform", "persistor", "userdashboard"]
+  "cSpell.words": [
+    "fortawesome",
+    "founditemform",
+    "itemform",
+    "missingitemform",
+    "persistor",
+    "userdashboard"
+  ]
 }
