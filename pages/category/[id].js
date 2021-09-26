@@ -1,11 +1,57 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/category.module.css";
-import CategoryNav from "../Components/Categories/CategoryPanelTwo/CategoryPanelTwo";
-import CategoryItem from "../Components/Categories/CategoryItem/CategoryItem";
+import styles from "../../styles/category.module.css";
+import CategoryNav from "../../Components/Categories/CategoryPanelTwo/CategoryPanelTwo";
+import CategoryItem from "../../Components/Categories/CategoryItem/CategoryItem";
 
-export default function Category() {
+export const getStaticPaths = async () => {
+  const res = await fetch(
+    "https://findermann.herokuapp.com/api/v1/category/get"
+  );
+  const data = await res.json();
+
+  const paths = data.message.map((category) => {
+    return {
+      params: {
+        id: category.categoryId.toString(),
+      },
+    };
+  });
+
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+// const categories = JSON.stringify(data.message);
+//   console.log(data);
+//   const paths = data.map((ninja) => {
+//     const _id = JSON.stringify(ninja.id);
+//     console.log(ninja);
+//     return {
+//       params: {
+//         id: _id,
+//       },
+//     };
+//   });
+
+export const getStaticProps = async (context) => {
+  const id = context.params.id;
+  const res = await fetch(
+    "https://findermann.herokuapp.com/api/v1/category/get_subcategories/" + id
+  );
+  const data = await res.json();
+
+  return {
+    props: {
+      category: data.message,
+    },
+  };
+};
+
+export default function Category({ category }) {
   return (
     <>
       {/* <!-- start of container --> */}
@@ -15,7 +61,7 @@ export default function Category() {
 
           <div className={styles.items_nav}>
             {/* this is where u will see vehicles mobile phones electronics nav */}
-            <CategoryNav />{" "}
+            <CategoryNav data={category} />{" "}
           </div>
           {/* end of items_nav */}
 

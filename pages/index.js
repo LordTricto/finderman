@@ -23,7 +23,7 @@ export default function Home() {
           {/* start of items_nav */}
           <div className={styles.items_nav}>
             {/* this is where u will see vehicles mobile phones electronics nav */}
-            <Category text={"Vehicles"} icon={"car"} to={"/category"} />
+            <Category text={"Vehicles"} icon={"car"} to={"/category/2"} />
 
             <Category
               text={"Mobile phones & tablets"}
@@ -55,7 +55,11 @@ export default function Home() {
 
             <Category text={"People"} icon={"users"} to={"/category"} />
 
-            <Category text={"Animals & Pets"} icon={"dog"} to={"/category"} />
+            <Category
+              text={"Animals & Pets"}
+              icon={"dog"}
+              to={"/category/get/10"}
+            />
 
             <Category
               text={"Agriculture & Food"}

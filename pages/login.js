@@ -55,7 +55,30 @@ export default function Login() {
           ? dispatch(loginSuccess(user_info))
           : setErrorMessage(error_message);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        // res.status(400)
+        //   ? setErrorMessage(err.message)
+        //   : res.status(401)
+        //   ? setErrorMessage(err.message)
+        //   : res.status(500)
+        //   ? console.log(err)
+        //   : null;
+
+        // res.status(400).json({
+        //   statusCode: 400,
+        //   message: err.message,
+        // });
+        // res.status(401).json({
+        //   statusCode: 401,
+        //   message: err.message,
+        // });
+        // res.status(500).json({
+        //   statusCode: 500,
+        //   message: err.message,
+        // });
+        // err.message;
+      });
   };
 
   return (
@@ -63,7 +86,6 @@ export default function Login() {
       {/* <!-- start of container --> */}
       <div className="container">
         <form
-          action="/api/v1/user/login"
           className={`${styles["loginForm"]} ${styles["login"]}`}
           onSubmit={handleFormSubmit}
         >

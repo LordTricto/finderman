@@ -35,7 +35,16 @@ textarea {
   outline: none;
   cursor: pointer;
 }
-
+.react-select__placeholder,
+.react-select__indicator {
+  color: #0d325ccc !important;
+}
+.react-select__value-container,
+.react-select__input-container,
+.react-select__placeholder {
+  padding: 0 !important;
+  margin: 0 !important;
+}
 /* End of High level Styles*/
 
 /* Start of High level Styles */

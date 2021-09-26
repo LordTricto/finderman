@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useSelector } from "react-redux";
-import States from "../utils/states";
+import StatesList from "../utils/statesList";
 import styles from "../styles/userDashboard.module.css";
 import Field from "../Components/Field/Field";
 import Button from "../Components/Buttons/Button";
@@ -72,7 +72,7 @@ function UserDashboard() {
                 type="text"
                 name="state"
                 fieldType="Select"
-                data={States}
+                data={StatesList}
               />
             </div>
 

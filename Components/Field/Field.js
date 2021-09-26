@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./Field.module.css";
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-
+import Select from "react-select";
+import makeAnimated from "react-select/animated";
+import useSelectStyles from "../../hooks/useSelectStyles";
 const Field = ({
   fieldType,
   type,
@@ -19,25 +18,8 @@ const Field = ({
   fontSize,
   data,
 }) => {
-  const [clickButton, setClickButton] = useState(true);
-  // const [require, setRequire] = useState(false);
-  const [filterName, setFilterName] = useState(text);
-  // var filterName;
-  // useEffect(() => {
-  //   setRequire(required);
-  // }, [req]);
+  const [customStyles, customTheme] = useSelectStyles();
 
-  const handleChange = () => {
-    if (clickButton === true) {
-      setClickButton(false);
-    } else if (clickButton === false) {
-      setClickButton(true);
-    }
-  };
-  const changeFilter = (e) => {
-    setFilterName(e.target.innerText);
-  };
-  // console.log(text);
   if (fieldType == "Input") {
     return (
       <>
@@ -66,54 +48,17 @@ const Field = ({
       <>
         {/* <!-- Start of Select Container --> */}
 
-        <div
-          className={styles.select_container}
-          onClick={handleChange}
-          name={name}
-          id={name}
-          style={{
-            padding: padding,
-            fontSize: fontSize,
-          }}
-        >
-          {" "}
-          <span
-            className={` ${
-              clickButton ? styles.button_span_off : styles.button_span_on
-            }`}
-          >
-            <FontAwesomeIcon icon={faChevronDown} />
-          </span>
-          {filterName ? filterName : "State"}
-          <ul
-            className={`${styles.select_container_options} 
-                    ${
-                      clickButton
-                        ? styles.container_disappear
-                        : styles.Container_appear
-                    }
-                    `}
-            onClick={() => {
-              setClickButton(false);
-            }}
-          >
-            {data.map((item, index) => {
-              return (
-                <li
-                  key={index}
-                  onClick={(e) => {
-                    changeFilter(e);
-                    {
-                      func(e);
-                    }
-                  }}
-                >
-                  {item.value}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+        <Select
+          classNamePrefix="react-select"
+          components={makeAnimated()}
+          onChange={func}
+          theme={customTheme}
+          styles={customStyles}
+          options={data}
+          placeholder={text}
+          noOptionsMessage={() => "no more options :("}
+          isSearchable
+        />
 
         {/* <!-- End of Select Container --> */}
       </>

@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "../styles/signup.module.css";
-import States from "../utils/states";
+import StatesList from "../utils/statesList";
 import Button from "../Components/Buttons/Button";
 import Field from "../Components/Field/Field";
 import { apiInstance } from "../utils/utils";
@@ -164,7 +164,7 @@ export default function Register() {
               type="text"
               name="state"
               fieldType="Select"
-              data={States}
+              data={StatesList}
               func={(e) => handleStateConfig(e)}
               req
             />

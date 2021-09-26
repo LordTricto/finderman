@@ -2,7 +2,12 @@ import Link from "next/link";
 import Field from "../Components/Field/Field";
 import ImageUpload from "../Components/ImageCard/ImageCard";
 import Button from "../Components/Buttons/Button";
-
+import CategoryList from "../utils/categoryList";
+import SubCategoryList from "../utils/subCategoriesList";
+import LocalGovernmentList from "../utils/localGovernmentList";
+import StatusList from "../utils/statusList";
+import ContactMethodList from "../utils/contactMethodList";
+import StatesList from "../utils/statesList";
 function MissingItemsForm() {
   return (
     <div>
@@ -21,6 +26,7 @@ function MissingItemsForm() {
                   type="text"
                   name="category"
                   fieldType="Select"
+                  data={CategoryList}
                 />
 
                 <Field
@@ -28,6 +34,7 @@ function MissingItemsForm() {
                   type="text"
                   name="subCategory"
                   fieldType="Select"
+                  data={SubCategoryList}
                 />
 
                 <Field
@@ -56,6 +63,7 @@ function MissingItemsForm() {
                   type="text"
                   name="state"
                   fieldType="Select"
+                  data={StatesList}
                 />
 
                 <Field
@@ -70,6 +78,7 @@ function MissingItemsForm() {
                   type="text"
                   name="localGovernment"
                   fieldType="Select"
+                  data={LocalGovernmentList}
                 />
 
                 <Field
@@ -84,6 +93,7 @@ function MissingItemsForm() {
                   type="text"
                   name="status"
                   fieldType="Select"
+                  data={StatusList}
                 />
 
                 <Field
@@ -91,6 +101,7 @@ function MissingItemsForm() {
                   type="text"
                   name="contactMethod"
                   fieldType="Select"
+                  data={ContactMethodList}
                 />
               </div>
 

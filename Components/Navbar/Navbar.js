@@ -198,7 +198,7 @@ const Navbar = () => {
                 <li
                   className={`${styles["extra_links__item"]} ${styles["extra_links__item--padding"]}`}
                 >
-                  <Link href="/postItem" passHref>
+                  <Link href="/itemform" passHref>
                     <div className={styles.post_ad}>Post Ad</div>
                   </Link>
                 </li>
