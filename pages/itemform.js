@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
 import Field from "../Components/Field/Field";
 import Button from "../Components/Buttons/Button";
 import CategoryList from "../utils/categoryList";
-import SubcategoryList from "../utils/subcategoriesList";
 import LocalGovernmentList from "../utils/localGovernmentList";
 import StatesList from "../utils/statesList";
 import { apiInstance } from "../utils/utils";
@@ -30,13 +30,10 @@ const ItemForm = () => {
   const [info, setInfo] = useState({ ...ItemConfig });
   const [extraInfo, setExtraInfo] = useState({ ...ItemExtraConfig });
   const [subcategory, setSubcategory] = useState([{ ...subcategoryConfig }]);
+  const [errorMessage, setErrorMessage] = useState();
+  const access_token = useSelector((state) => state.user.accessToken);
   const router = useRouter();
 
-  useEffect(() => {
-    console.log(subcategory);
-  }, [subcategory]);
-
-  // router.push("/userdashboard")
   const handleConfig = (e) => {
     const { name, value } = e.target;
     setInfo({
@@ -55,34 +52,41 @@ const ItemForm = () => {
   const handleFormSubmit = async (evt) => {
     evt.preventDefault();
     if (
-      !info.firstName === "-" ||
-      !info.lastName === "-" ||
+      !info.nameOfItem === "-" ||
       !info.phoneNumber === "-" ||
       !info.email === "-" ||
       !info.address === "-" ||
-      !info.username === "-" ||
-      !info.password ||
-      !info.stateInfo === "-"
+      !extraInfo.category === "-" ||
+      !subcategory.id === "-" ||
+      !extraInfo.localGovernment === "-" ||
+      !extraInfo.state === "-"
     ) {
       return null;
     }
     apiInstance
-      .post("/api/v1/user/register", {
-        firstName: info.firstName,
-        lastName: info.lastName,
-        email: info.email,
-        phoneNumber: info.phoneNumber,
-        address: info.address,
-        password: info.password,
-        username: info.username,
-        state: stateInfo.state,
-      })
+      .post(
+        "/api/v1/item/create",
+        {
+          itemName: info.nameOfItem,
+          contactEmail: info.email,
+          contactPhoneNumber: info.phoneNumber,
+          address: info.address,
+          subcategory: subcategory.id,
+          state: extraInfo.state,
+          localGovernment: extraInfo.localGovernment,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${access_token}`,
+          },
+        }
+      )
       .then((res) => {
-        const user_info = res.data;
-        const error_message = res.data.message;
-        res.data.status === "success"
-          ? dispatch(loginSuccess(user_info))
-          : setErrorMessage(error_message);
+        console.log("done");
+        //Redirect
+        setInterval(() => {
+          router.push("/userdashboard");
+        }, 1000);
       })
       .catch((err) => console.log(err));
   };
@@ -90,9 +94,15 @@ const ItemForm = () => {
     apiInstance
       .get("/api/v1/category/get_subcategories/" + number)
       .then((res) => {
-        res.data.message.map((item) => {
-          return setSubcategory(item.subcategoryName);
-        });
+        const items = res.data.message;
+        setSubcategory(
+          items.map((item) => ({
+            name: "subcategory",
+            value: item.subcategoryName,
+            id: item.subCategoryId,
+            label: item.subcategoryName,
+          }))
+        );
       })
       .catch((err) => {
         console.log(err);
@@ -128,7 +138,7 @@ const ItemForm = () => {
                   type="text"
                   name="subcategory"
                   fieldType="Select"
-                  data={SubcategoryList}
+                  data={subcategory}
                   func={(e) => handleExtraConfig(e)}
                 />
 
@@ -182,16 +192,21 @@ const ItemForm = () => {
                   func={(e) => handleExtraConfig(e)}
                 />
               </div>
+              {errorMessage && (
+                <div className={styles.login_errorMessage}>
+                  <p className={styles.login_message}>* {errorMessage}</p>
+                </div>
+              )}
+              <div className="upload_images_section">
+                <Button
+                  type="submit"
+                  text="Post"
+                  width="70%"
+                  margin="2.5rem 0"
+                  to="/subscription"
+                />
+              </div>
             </form>
-            <div className="upload_images_section">
-              <Button
-                type="submit"
-                text="Post"
-                width="70%"
-                margin="2.5rem 0"
-                to="/subscription"
-              />
-            </div>
           </div>
         </div>
       </>
