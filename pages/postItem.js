@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Link from "next/link";
 import styles from "../styles/postItemOption.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

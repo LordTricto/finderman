@@ -42,24 +42,25 @@ export const logoutSuccess = () => {
   };
 };
 
-// export const login = ({ info }) => {
-//   return (dispatch) => {
-//     dispatch(loginRequest);
-//     apiInstance
-//       .post("/api/v1/user/login", {
-//         email: info.email,
-//         password: info.password,
-//       })
-//       .then((res) => {
-//         const user_info = res.data;
-//         const error_message = res.data.message;
-//         res.data.status === "success"
-//           ? dispatch(loginSuccess(user_info))
-//           : dispatch(loginErrorMessage(error_message));
-//       })
-//       .catch((err) => dispatch(loginFailure(err)));
-//   };
-// };
+export const getUser = (id, access_token) => {
+  return (dispatch) => {
+    dispatch(loginRequest);
+    apiInstance
+      .get("/api/v1/user/get/" + id, {
+        headers: {
+          Authorization: `Bearer ${access_token}`,
+        },
+      })
+      .then((res) => {
+        const user_info = res.data;
+        const error_message = res.data.message;
+        res.data.status === "success"
+          ? dispatch(loginSuccess(user_info))
+          : dispatch(loginErrorMessage(error_message));
+      })
+      .catch((err) => dispatch(loginFailure(err)));
+  };
+};
 // export const signUp = ({ info, stateInfo }) => {
 //   return (dispatch) => {
 //     dispatch(loginRequest);

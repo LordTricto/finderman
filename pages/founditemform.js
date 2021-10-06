@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
 import Field from "../Components/Field/Field";
 import Button from "../Components/Buttons/Button";
+
 
 const ItemConfig = {
   policeStation: "",
@@ -54,7 +57,7 @@ const FoundItemsForm = () => {
             excepturi corrupti, rem voluptatum ducimus.
           </p>
           {/* start of post_person_info */}
-          <form onSubmit={handleFormSubmit} className="post_person_info">
+          <form onSubmit={handleFormSubmit} >
             <div className="post_person_info">
               <Field
                 text="Police Station Holding item"

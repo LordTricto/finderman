@@ -35,15 +35,32 @@ textarea {
   outline: none;
   cursor: pointer;
 }
-.react-select__placeholder,
-.react-select__indicator {
-  color: #0d325ccc !important;
+.react-select-nav__indicator-separator,.react-select__indicator-separator {
+display: none;
 }
+
+.react-select__placeholder,
+.react-select-nav__placeholder,
+.react-select__indicator,
+.react-select-nav__indicator {
+  color: #0d325ccc !important;
+  padding: 0;
+}
+.react-select-nav__value-container,
 .react-select__value-container,
+.react-select-nav__input-container,
 .react-select__input-container,
+.react-select-nav__placeholder,
 .react-select__placeholder {
   padding: 0 !important;
   margin: 0 !important;
+}
+.react-select-nav__value-container{
+  order: 2 !important;
+  margin-left: 0.5rem !important;
+}
+.react-select-nav__indicators {
+  order: 1 !important;
 }
 /* End of High level Styles*/
 
@@ -57,8 +74,6 @@ textarea {
 }
 .container {
   padding: 1rem 0.9rem;
-  /* width: 50rem; */
-  /* max-width: 700px; */
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -84,6 +99,7 @@ textarea {
 .post_person_box {
   margin: 2.5rem 0;
   width: 70rem;
+  min-height: 30rem;
 }
 /* End of General Form Styles*/
 

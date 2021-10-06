@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Field from "../../Field/Field";
 import StatesList from "../../../utils/statesList";
-import FilterType from "../../../utils/typeFIlter";
+import FilterType from "../../../utils/typeList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {

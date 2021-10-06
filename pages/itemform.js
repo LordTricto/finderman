@@ -34,6 +34,7 @@ const ItemForm = () => {
   const access_token = useSelector((state) => state.user.accessToken);
   const router = useRouter();
 
+  console.log(access_token)
   const handleConfig = (e) => {
     const { name, value } = e.target;
     setInfo({
@@ -51,6 +52,7 @@ const ItemForm = () => {
 
   const handleFormSubmit = async (evt) => {
     evt.preventDefault();
+
     if (
       !info.nameOfItem === "-" ||
       !info.phoneNumber === "-" ||

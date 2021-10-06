@@ -70,46 +70,6 @@
   font-weight: 500;
   font-size: 1rem;
 }
-/* .select_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  position: relative;
-  margin: 4% 0;
-  background-color: #fff;
-  border-radius: 0 40px 40px 0;
-  overflow: hidden;
-}
-.select_container select {
-  padding: 0.6rem 1rem;
-  color: #0d325ccc;
-  width: 100%;
-  border: transparent;
-  outline: none;
-  appearance: none;
-  text-align: right;
-}
-.select_container select option {
-  outline: 0px;
-  border: 0px;
-  border-radius: 40px;
-  background-color: white;
-  padding: 5rem;
-}
-.select_icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 20%;
-  height: 100%;
-  left: 0;
-  pointer-events: none;
-  outline: none;
-  cursor: pointer;
-  color: var(--lightBlue);
-  padding: 0 0 0 0.8rem;
-} */
 
 .select_container {
   background-color: #fff;
@@ -195,6 +155,15 @@
   color: var(--veryLightBlue);
 }
 
+
+
+/* Navbar search */
+.inputContainer > div {
+ height: 100% !important;
+ position: relative !important;
+}
+
+
 @media screen and (min-width: 500px) {
   .navlinks li a {
     padding: 1rem 0.9rem;
@@ -253,11 +222,10 @@
     text-align: right;
   }
   .laptop_navlinks #laptop_navlinks_searchText {
-    width: 15rem;
     height: 100%;
     border: transparent;
     margin: 0;
-    padding: 0rem 1.5rem;
+    padding-left:  1.5rem;
     border-radius: 40px 0px 0px 40px;
   }
   .nav_search {
@@ -309,7 +277,6 @@
     display: flex;
     flex-direction: row;
     width: 40%;
-    font-size: 1.5rem !important;
   }
   .extra_links__links_loggedIn span {
     padding-left: 0.5rem;
@@ -324,6 +291,9 @@
   .extra_links__links--spaceTwo {
     width: 50%;
   }
+  .select_container{
+    width: 6rem;
+}
 }
 @media screen and (min-width: 1100px) {
   .extra_links__item--padding {
@@ -364,12 +334,23 @@
   }
 }
 @media screen and (min-width: 1560px) {
-  .laptop_navlinks form {
+  /* .laptop_navlinks form {
     width: 50%;
   }
   .laptop_navlinks .extra_links {
     width: 48%;
-  }
+  } */
+  .select_container{
+    width: 10rem;
+}
+.laptop_navlinks #laptop_navlinks_searchText {
+  width: 15rem;
+  height: 100%;
+  border: transparent;
+  margin: 0;
+  padding: 0rem 1.5rem;
+  border-radius: 40px 0px 0px 40px;
+}
 }
 
 @media screen and (min-width: 1710px) {

@@ -61,7 +61,7 @@ export default function Register() {
       !info.address === "-" ||
       !info.username === "-" ||
       !info.password ||
-      !info.stateInfo === "-"
+      !stateInfo.state === "-"
     ) {
       return null;
     }

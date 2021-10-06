@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "./Navbar.module.css";
+import Field from "../Field/Field";
+import StatusList from "../../utils/statusList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faBars } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
@@ -29,7 +31,6 @@ const Navbar = () => {
     console.log(e.target.innerText);
     setFilterName(e.target.innerText);
   };
-  console.log(loggedIn);
   return (
     <>
       {/* <!-- start of nav --> */}
@@ -112,37 +113,15 @@ const Navbar = () => {
                 ></input>
 
                 {/* <!-- start of select container --> */}
-
-                <div className={styles.select_container} onClick={handleChange}>
-                  {" "}
-                  <span
-                    className={` ${
-                      clickButton
-                        ? styles.button_span_off
-                        : styles.button_span_on
-                    }`}
-                  >
-                    <FontAwesomeIcon icon={faChevronDown} />
-                  </span>
-                  {filterName}
-                  <ul
-                    className={`${styles.select_container_options} 
-                    ${
-                      clickButton
-                        ? styles.container_disappear
-                        : styles.Container_appear
-                    }
-                    `}
-                    onClick={() => {
-                      setClickButton(false);
-                    }}
-                  >
-                    <li onClick={changeFilter}>Location</li>
-                    <li onClick={changeFilter}>Missing</li>
-                    <li onClick={changeFilter}>Found</li>
-                  </ul>
-                </div>
-                {/* <!-- end of select continer --> */}
+                <Field
+                  text="Location"
+                  type="text"
+                  name="filter"
+                  fieldType="navSelect"
+                  data={StatusList}
+                  // func={(e) => handleExtraConfig(e)}
+                />
+               {/* <!-- end of select continer --> */}
               </div>
               <button className={`${styles.btn} ${styles.nav_search}`}>
                 Search
