@@ -176,7 +176,21 @@
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1100px) {
+  .extra_links__item--padding {
+    padding-left: 1rem;
+  }
+  .extra_links__links--spaceTwo {
+    width: 44%;
+  }
+  .laptop_navlinks form {
+    width: 45%;
+  }
+  .laptop_navlinks .extra_links {
+    width: 53%;
+  }
+}
+@media screen and (min-width: 1150px) {
   #finderman-Logo {
     padding-right: 2rem;
     font-size: 1.75rem;
@@ -226,7 +240,11 @@
     border: transparent;
     margin: 0;
     padding-left:  1.5rem;
+    font-size: 0.8rem;
     border-radius: 40px 0px 0px 40px;
+  }
+  #laptop_navlinks_searchText::placeholder {
+    font-size: 0.8rem;
   }
   .nav_search {
     padding: 0.6rem 1.4rem;
@@ -294,20 +312,6 @@
   .select_container{
     width: 6rem;
 }
-}
-@media screen and (min-width: 1100px) {
-  .extra_links__item--padding {
-    padding-left: 1rem;
-  }
-  .extra_links__links--spaceTwo {
-    width: 44%;
-  }
-  .laptop_navlinks form {
-    width: 45%;
-  }
-  .laptop_navlinks .extra_links {
-    width: 53%;
-  }
 }
 @media screen and (min-width: 1260px) {
   #finderman-Logo {
