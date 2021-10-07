@@ -4,7 +4,8 @@
   border: transparent;
   border-radius: 10px;
   background-color: #ececec;
-  width: 10rem;
+  height: 15rem;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

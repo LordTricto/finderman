@@ -25,10 +25,10 @@ const ImageCard = ({ width, height, func }) => {
     <>
       <div
         className={styles.upload_image}
-        style={{
-          width: width,
-          height: height,
-        }}
+        // style={{
+        //   width: width,
+        //   height: height,
+        // }}
       >
         {preview ? (
           <Image
