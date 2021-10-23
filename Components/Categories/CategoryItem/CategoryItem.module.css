@@ -58,10 +58,16 @@
 .item_status {
   color: var(--lightBlue);
   font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .item_reward {
   color: var(--darkRed);
   font-size: 0.7rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .item_category {
   color: var(--lightPurple);
@@ -83,17 +89,17 @@
   font-weight: 300;
 }
 
+.item_content-heightTall {
+  /* height: 175px; */
+  padding: 1.25rem 0.9rem 1.25rem 0.9rem;
+}
+.item_content-heightShort {
+  /* height: 110px; */
+  padding: 2.65rem 0.9rem 2.65rem 0.9rem;
+}
 @media screen and (min-width: 700px) {
   .item_pics {
     height: 175px;
-  }
-  .item_content-heightTall {
-    /* height: 175px; */
-    padding: 1.25rem 0.9rem 1.25rem 0.9rem;
-  }
-  .item_content-heightShort {
-    /* height: 110px; */
-    padding: 2.65rem 0.9rem 2.65rem 0.9rem;
   }
   .item_content {
     display: flex;

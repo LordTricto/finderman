@@ -1,6 +1,19 @@
 .icon {
   margin-left: 0.7rem;
 }
+.content {
+  width: 90vw;
+  margin: 0 auto;
+}
+.items_nav {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
 /* <!-- start of other_popular_categories --> */
 
 .other_popular_categories h3 {
@@ -11,6 +24,12 @@
 }
 
 /* <!-- end of other_popular_categories --> */
+
+@media screen and (min-width: 370px) {
+  .items_nav {
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  }
+}
 
 @media screen and (min-width: 600px) {
   .popular_categories_grid {
@@ -39,8 +58,7 @@
     padding: 0 2.5vw;
   }
 }
-
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1100px) {
   .content {
     display: flex;
     justify-content: center;
@@ -57,7 +75,9 @@
     /* margin: 6rem auto; */
   }
   .items_nav {
+    display: block;
     grid-area: items_nav;
+    margin: 0;
   }
   .main_content {
     grid-area: main_content;

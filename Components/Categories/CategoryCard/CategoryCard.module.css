@@ -10,5 +10,9 @@
   margin: 5% 0;
 }
 .popular_categories_item p {
+  padding-left: 1rem;
   color: #0d325c;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

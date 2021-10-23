@@ -36,10 +36,10 @@ textarea {
   cursor: pointer;
 }
 
-
 /* Start of select styles */
-.react-select-nav__indicator-separator,.react-select__indicator-separator {
-display: none;
+.react-select-nav__indicator-separator,
+.react-select__indicator-separator {
+  display: none;
 }
 .react-select__placeholder,
 .react-select-nav__placeholder,
@@ -57,7 +57,7 @@ display: none;
   padding: 0 !important;
   margin: 0 !important;
 }
-.react-select-nav__value-container{
+.react-select-nav__value-container {
   order: 2 !important;
   margin-left: 0.5rem !important;
 }
@@ -65,7 +65,6 @@ display: none;
   order: 1 !important;
 }
 /* End of select styles */
-
 
 /* End of High level Styles*/
 
@@ -121,8 +120,8 @@ display: none;
   display: grid;
   justify-content: center;
   align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(12.5rem,1fr));
-gap:2rem;
+  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  gap: 2rem;
   width: 100%;
 }
 
@@ -157,17 +156,34 @@ gap:2rem;
 .items_header {
   margin-left: 6px;
 }
-@media screen and (min-width: 370px) {
+.items_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+  /* grid-template-columns: repeat(2, 1fr); */
+  gap: 20px;
+}
+/* @media screen and (min-width: 290px) {
+  .items_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+  }
+} */
+@media screen and (min-width: 360px) {
+  .items_grid {
+    grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  }
   footer {
     text-align: center;
   }
 }
+
 @media screen and (min-width: 500px) {
-  .items_grid {
+  /* .items_grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
     gap: 20px;
-  }
+  } */
   .items_header {
     display: flex;
     align-items: center;
@@ -184,7 +200,7 @@ gap:2rem;
   .upload_image_container {
     display: grid;
     justify-content: start;
-    grid-template-columns: repeat(auto-fit, minmax(12.5rem,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
   }
   .customer_order_summary_pane__price_and_package {
     font-size: 2rem;
@@ -212,22 +228,21 @@ gap:2rem;
 @media screen and (min-width: 1000px) {
   .items_grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
   }
   .content {
     padding: 0 2.5vw;
   }
-    /* footer */
-    footer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
+  /* footer */
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 @media screen and (min-width: 1100px) {
- 
 }
 @media screen and (min-width: 1200px) {
   .items_grid {
@@ -242,8 +257,5 @@ gap:2rem;
 
 /* End of Item Grid Styles*/
 
-
-
 @media screen and (min-width: 500px) {
-
 }

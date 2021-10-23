@@ -13,7 +13,7 @@
   align-items: center;
   cursor: pointer;
   max-width: 100rem;
-  width: 80vw;
+  width: 90vw;
 }
 
 .navlinks {
@@ -173,6 +173,11 @@
   }
   .select-container {
     margin: 0;
+  }
+}
+@media screen and (min-width: 700px) {
+  .nav {
+    width: 80vw;
   }
 }
 
