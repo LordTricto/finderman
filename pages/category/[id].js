@@ -58,7 +58,6 @@ export default function Category({ category }) {
       <div className={styles.content}>
         <div className={styles.container}>
           {/* start of items_nav */}
-
           <div className={styles.items_nav}>
             {/* this is where u will see vehicles mobile phones electronics nav */}
             <CategoryNav data={category} />{" "}

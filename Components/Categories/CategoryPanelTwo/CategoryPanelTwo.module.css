@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin: 3rem 0;
 }
 
 .items_nav {
@@ -19,10 +20,8 @@
 
 .category {
   width: 100%;
-  display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
 }
 .category > p {
   align-self: start;
@@ -68,4 +67,136 @@
 .category_content {
   font-size: 0.9rem;
   color: var(--thick-blue);
+}
+.filters,
+.category {
+  display: none;
+}
+
+.filter__container {
+  height: 5rem;
+  display: flex;
+  align-self: flex-end;
+  align-items: center;
+}
+.filter__button {
+  padding: 1rem 2.5rem;
+  background-color: rgb(240, 240, 240);
+  border-radius: 6px;
+}
+.filter__main {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  color: white;
+  z-index: 9;
+  background-color: var(--lightBlue);
+}
+.filter__main > div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 90vw;
+  height: 100%;
+}
+.filter__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.4rem 0;
+  font-weight: 500;
+}
+.filter__header .filter__icon {
+  font-size: 1.5rem;
+  transform: rotate(45deg);
+}
+.filter__body {
+  width: 100%;
+}
+.filter__links {
+  width: 100%;
+  padding: 1rem 0;
+}
+.filter__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.filter__icon {
+  margin-left: 1.5rem;
+  font-size: 0.85rem;
+}
+.filter__options {
+  padding-top: 1rem;
+}
+.filter__option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+.filter__apply {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 4.5rem 0;
+}
+@media screen and (min-width: 360px) {
+}
+
+@media screen and (min-width: 500px) {
+}
+
+@media screen and (min-width: 600px) {
+}
+
+@media screen and (min-width: 700px) {
+}
+
+@media screen and (min-width: 1000px) {
+}
+
+@media screen and (min-width: 1100px) {
+  .filter__container {
+    display: none;
+  }
+  .filters,
+  .category {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 360px) {
+}
+
+@media screen and (min-width: 500px) {
+}
+
+@media screen and (min-width: 600px) {
+}
+
+@media screen and (min-width: 700px) {
+}
+
+@media screen and (min-width: 1000px) {
+}
+
+@media screen and (min-width: 1100px) {
+}
+
+@media screen and (min-width: 1200px) {
 }
