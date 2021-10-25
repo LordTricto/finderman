@@ -23,6 +23,7 @@ import {
   faToolbox,
   faPlus,
   faCheck,
+  faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -39,22 +40,17 @@ library.add(
   faWrench,
   faToolbox,
   faPlus,
-  faCheck
+  faCheck,
+  faChevronDown
 );
 
-const ItemConfig = {
-  reward: "",
-  description: "",
-};
-
-const ItemExtraConfig = {
-  status: "",
-  contactMethod: "",
+const FilterConfig = {
+  location: "",
+  type: "",
 };
 
 const CategoryPanel = ({ data }) => {
-  const [info, setInfo] = useState({ ...ItemConfig });
-  const [extraInfo, setExtraInfo] = useState({ ...ItemExtraConfig });
+  const [filter, setFilter] = useState({ ...FilterConfig });
   const [showMobileFilter, setShowMobileFilter] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
   const [showLocation, setShowLocation] = useState(false);
@@ -64,31 +60,18 @@ const CategoryPanel = ({ data }) => {
   const [selectedLocation, setSelectedLocation] = useState(false);
 
   const handleConfig = (e) => {
-    const { name, value } = e.target;
-    setInfo({
-      ...info,
-      [name]: value,
-    });
-  };
-  const handleExtraConfig = (e) => {
     const { name, value } = e;
-    setExtraInfo({
-      ...extraInfo,
+    setFilter({
+      ...filter,
       [name]: value,
     });
   };
   const handleFormSubmit = async (evt) => {
     evt.preventDefault();
     console.log("object");
-    // if (
-    //   !info.reward === "-" ||
-    //   !info.description === "-" ||
-    //   !extraInfo.status === "-" ||
-    //   !extraInfo.contactMethod === "-" ||
-    //   !image === ""
-    // ) {
-    //   return null;
-    // }
+    if (!filter.location === "-" && !filter.type === "-") {
+      return null;
+    }
     // apiInstance
     //   .post(
     //     "/api/v1/item/create",
@@ -118,7 +101,7 @@ const CategoryPanel = ({ data }) => {
     <>
       <div className={styles.container}>
         <div className={styles.filters}>
-          <form id="filterForm" name="filterForm" onSubmit={handleFormSubmit}>
+          <form onSubmit={handleFormSubmit}>
             <div className={styles.location}>
               <p>Filter By location</p>
 
@@ -127,7 +110,10 @@ const CategoryPanel = ({ data }) => {
                 type="text"
                 name="location"
                 fieldType="Select"
-                func={this.filterForm.submit()}
+                func={(e) => {
+                  handleConfig(e);
+                  setSelectedLocation(e.value);
+                }}
                 data={StatesList}
               />
             </div>
@@ -139,7 +125,20 @@ const CategoryPanel = ({ data }) => {
                 type="text"
                 name="type"
                 fieldType="Select"
+                func={(e) => {
+                  handleConfig(e);
+                  setSelectedType(e.value);
+                }}
                 data={FilterType}
+              />
+            </div>
+            <div className={styles.filter__apply}>
+              <Button
+                type="submit"
+                text="Apply"
+                width="100%"
+                fontSize="1rem"
+                margin="0 0 0 0"
               />
             </div>
           </form>
@@ -169,10 +168,58 @@ const CategoryPanel = ({ data }) => {
             </div>
           </div>
         </div>
-
+        {/* Mobile Filter */}
         <div className={styles.filter__container}>
+          <div className={`${styles.filter__button} ${styles.category}`}>
+            <div
+              className={styles.filter__text}
+              onClick={() => setShowOptions(!showOptions)}
+            >
+              {/* {data[0].categoryName} */}
+              Category
+            </div>
+            <div
+              className={styles.filter__text}
+              onClick={() => setShowOptions(!showOptions)}
+            >
+              {/* <span>{selectedCategory}</span> */}
+              <FontAwesomeIcon
+                className={styles.filter__icon}
+                icon={faChevronDown}
+              />
+            </div>
+            {/* Options */}
+            <div
+              className={`${
+                showOptions ? styles.filter__options : "displayNone"
+              }`}
+            >
+              {data.map((item) => {
+                return (
+                  <div
+                    className={styles.filter__option}
+                    onClick={() => setSelectedCategory(item.subcategoryName)}
+                  >
+                    <span className={styles.filter__text}>
+                      {item.subcategoryName}
+                    </span>
+                    <FontAwesomeIcon
+                      className={styles.filter__icon}
+                      className={`${
+                        selectedCategory === item.subcategoryName
+                          ? styles.filter__icon
+                          : "displayNone"
+                      }`}
+                      icon={faCheck}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div className={styles.filter__split}></div>
           <div
-            className={styles.filter__button}
+            className={`${styles.filter__button} ${styles.category}`}
             onClick={() => setShowMobileFilter(!showMobileFilter)}
           >
             Filter
@@ -193,52 +240,6 @@ const CategoryPanel = ({ data }) => {
                 />
               </div>
               <div className={styles.filter__body}>
-                <div className={styles.filter__links}>
-                  <div
-                    className={styles.filter__link}
-                    onClick={() => setShowOptions(!showOptions)}
-                  >
-                    <div className={styles.filter__text}>
-                      Category ({data[0].categoryName})
-                    </div>
-                    <div className={styles.filter__text}>
-                      <span>{selectedCategory}</span>
-                      <FontAwesomeIcon
-                        className={styles.filter__icon}
-                        icon={faPlus}
-                      />
-                    </div>
-                  </div>
-                  <div
-                    className={`${
-                      showOptions ? styles.filter__options : "displayNone"
-                    }`}
-                  >
-                    {data.map((item) => {
-                      return (
-                        <div
-                          className={styles.filter__option}
-                          onClick={() =>
-                            setSelectedCategory(item.subcategoryName)
-                          }
-                        >
-                          <span className={styles.filter__text}>
-                            {item.subcategoryName}
-                          </span>
-                          <FontAwesomeIcon
-                            className={styles.filter__icon}
-                            className={`${
-                              selectedCategory === item.subcategoryName
-                                ? styles.filter__icon
-                                : "displayNone"
-                            }`}
-                            icon={faCheck}
-                          />
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
                 <div className={styles.filter__links}>
                   <div
                     className={styles.filter__link}
@@ -263,7 +264,10 @@ const CategoryPanel = ({ data }) => {
                       type="text"
                       name="location"
                       fieldType="Select"
-                      func={(e) => setSelectedLocation(e.value)}
+                      func={(e) => {
+                        handleConfig(e);
+                        setSelectedLocation(e.value);
+                      }}
                       data={StatesList}
                     />
                   </div>
@@ -292,7 +296,10 @@ const CategoryPanel = ({ data }) => {
                       type="text"
                       name="type"
                       fieldType="Select"
-                      func={(e) => setSelectedType(e.value)}
+                      func={(e) => {
+                        handleConfig(e);
+                        setSelectedType(e.value);
+                      }}
                       data={FilterType}
                     />
                   </div>
@@ -316,3 +323,52 @@ const CategoryPanel = ({ data }) => {
 };
 
 export default CategoryPanel;
+
+{
+  /* <div className={styles.filter__links}>
+<div
+  className={styles.filter__link}
+  onClick={() => setShowOptions(!showOptions)}
+>
+  <div className={styles.filter__text}>
+    Category ({data[0].categoryName})
+  </div>
+  <div className={styles.filter__text}>
+    <span>{selectedCategory}</span>
+    <FontAwesomeIcon
+      className={styles.filter__icon}
+      icon={faPlus}
+    />
+  </div>
+</div>
+<div
+  className={`${
+    showOptions ? styles.filter__options : "displayNone"
+  }`}
+>
+  {data.map((item) => {
+    return (
+      <div
+        className={styles.filter__option}
+        onClick={() =>
+          setSelectedCategory(item.subcategoryName)
+        }
+      >
+        <span className={styles.filter__text}>
+          {item.subcategoryName}
+        </span>
+        <FontAwesomeIcon
+          className={styles.filter__icon}
+          className={`${
+            selectedCategory === item.subcategoryName
+              ? styles.filter__icon
+              : "displayNone"
+          }`}
+          icon={faCheck}
+        />
+      </div>
+    );
+  })}
+</div>
+</div> */
+}

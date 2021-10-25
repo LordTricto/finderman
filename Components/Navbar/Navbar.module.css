@@ -155,15 +155,11 @@
   color: var(--veryLightBlue);
 }
 
-
-
 /* Navbar search */
 .inputContainer > div {
- height: 100% !important;
- position: relative !important;
+  height: 100% !important;
+  position: relative !important;
 }
-
-
 @media screen and (min-width: 500px) {
   .navlinks li a {
     padding: 1rem 0.9rem;
@@ -176,11 +172,7 @@
   }
 }
 @media screen and (min-width: 700px) {
-  .nav {
-    width: 80vw;
-  }
 }
-
 @media screen and (min-width: 1100px) {
   .extra_links__item--padding {
     padding-left: 1rem;
@@ -244,7 +236,7 @@
     height: 100%;
     border: transparent;
     margin: 0;
-    padding-left:  1.5rem;
+    padding-left: 1.5rem;
     font-size: 0.8rem;
     border-radius: 40px 0px 0px 40px;
   }
@@ -314,9 +306,9 @@
   .extra_links__links--spaceTwo {
     width: 50%;
   }
-  .select_container{
+  .select_container {
     width: 6rem;
-}
+  }
 }
 @media screen and (min-width: 1260px) {
   #finderman-Logo {
@@ -349,19 +341,23 @@
   .laptop_navlinks .extra_links {
     width: 48%;
   } */
-  .select_container{
+  .select_container {
     width: 10rem;
+  }
+  .laptop_navlinks #laptop_navlinks_searchText {
+    width: 15rem;
+    height: 100%;
+    border: transparent;
+    margin: 0;
+    padding: 0rem 1.5rem;
+    border-radius: 40px 0px 0px 40px;
+  }
 }
-.laptop_navlinks #laptop_navlinks_searchText {
-  width: 15rem;
-  height: 100%;
-  border: transparent;
-  margin: 0;
-  padding: 0rem 1.5rem;
-  border-radius: 40px 0px 0px 40px;
+@media screen and (min-width: 1670px) {
+  /* .nav {
+    width: 80vw;
+  } */
 }
-}
-
 @media screen and (min-width: 1710px) {
   #finderman-Logo {
     font-size: 2.5rem;

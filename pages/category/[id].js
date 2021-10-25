@@ -52,6 +52,7 @@ export const getStaticProps = async (context) => {
 };
 
 export default function Category({ category }) {
+  console.log(category);
   return (
     <>
       {/* <!-- start of container --> */}
