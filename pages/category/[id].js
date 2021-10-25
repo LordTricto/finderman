@@ -53,6 +53,33 @@ export const getStaticProps = async (context) => {
 
 export default function Category({ category }) {
   console.log(category);
+  // useEffect(() => {}, []);
+  const changeFilter = (e) => {
+    // apiInstance
+    //   .post(
+    //     "/api/v1/item/create/?category=${e}",
+    //     {
+    //       reward: info.reward,
+    //       description: info.description,
+    //       status: extraInfo.status,
+    //       contactMethod: extraInfo.contactMethod,
+    //       image: image,
+    //     },
+    //     {
+    //       headers: {
+    //         Authorization: `Bearer ${access_token}`,
+    //       },
+    //     }
+    //   )
+    //   .then((res) => {
+    //     console.log("done");
+    //     //Redirect
+    //     setInterval(() => {
+    //       router.push("/missingitems");
+    //     }, 1000);
+    //   })
+    //   .catch((err) => console.log(err));
+  };
   return (
     <>
       {/* <!-- start of container --> */}
@@ -61,7 +88,7 @@ export default function Category({ category }) {
           {/* start of items_nav */}
           <div className={styles.items_nav}>
             {/* this is where u will see vehicles mobile phones electronics nav */}
-            <CategoryNav data={category} />{" "}
+            <CategoryNav data={category} func1={(e) => changeFilter(e)} />{" "}
           </div>
           {/* end of items_nav */}
 

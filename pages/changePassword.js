@@ -48,7 +48,7 @@ function ChangePassword() {
             <Button
               type="submit"
               text="Update Password"
-              width="50%"
+              width="70%"
               margin="2.5rem 0 0 0 "
             />
           </form>

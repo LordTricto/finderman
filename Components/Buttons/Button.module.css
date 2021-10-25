@@ -13,8 +13,8 @@
   color: #ffffffd8;
   width: 100%;
   margin: 2.5rem 0;
-  padding: 1rem 2rem;
-  font-size: 1.5rem;
+  padding: 1rem 0rem;
+  font-size: 1.25rem;
   cursor: pointer;
   transition: all 0.2s ease-out;
   outline: none;
@@ -26,9 +26,18 @@
 .button input[type="submit"]:focus {
   transform: translateY(0);
 }
-
 @media screen and (min-width: 600px) {
   .button input[type="submit"] {
     width: 50%;
+  }
+}
+@media screen and (min-width: 600px) {
+  .button input[type="submit"] {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 700px) {
+  .button input[type="submit"] {
+    font-size: 1.5rem;
   }
 }

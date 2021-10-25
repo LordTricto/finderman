@@ -49,7 +49,7 @@ const FilterConfig = {
   type: "",
 };
 
-const CategoryPanel = ({ data }) => {
+const CategoryPanel = ({ data, func1 }) => {
   const [filter, setFilter] = useState({ ...FilterConfig });
   const [showMobileFilter, setShowMobileFilter] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
@@ -198,7 +198,11 @@ const CategoryPanel = ({ data }) => {
                 return (
                   <div
                     className={styles.filter__option}
-                    onClick={() => setSelectedCategory(item.subcategoryName)}
+                    onClick={() => {
+                      setSelectedCategory(item.subcategoryName);
+                      // console.log(func1);
+                      func1(item.subcategoryName);
+                    }}
                   >
                     <span className={styles.filter__text}>
                       {item.subcategoryName}

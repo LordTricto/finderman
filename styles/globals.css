@@ -35,7 +35,14 @@ textarea {
   outline: none;
   cursor: pointer;
 }
-
+a {
+  width: 100%;
+}
+span {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 /* Start of select styles */
 .react-select-nav__indicator-separator,
 .react-select__indicator-separator {

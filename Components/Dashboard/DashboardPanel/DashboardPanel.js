@@ -26,14 +26,14 @@ const DashboardPanel = () => {
           </div>
           <p className={styles.user_nav_pane__user_info_section__name}>Sammy</p>
         </div>
-        <div className={styles.user_nav_pane__links}>
+        <ul className={styles.user_nav_pane__links}>
           <li>
             <Link href="/userDashboard" passHref>
               <div className={styles.user_nav_pane__links_content}>
                 <div className={styles.iconDiv}>
                   <FontAwesomeIcon icon={faUser} className={styles.icon} />{" "}
                 </div>
-                <p> Update Profile </p>
+                <span> Update Profile </span>
               </div>
             </Link>
           </li>
@@ -43,7 +43,7 @@ const DashboardPanel = () => {
                 <div className={styles.iconDiv}>
                   <FontAwesomeIcon icon={faUserEdit} className={styles.icon} />
                 </div>
-                <p> Edit Uploads </p>
+                <span> Edit Uploads </span>
               </div>
             </Link>
           </li>
@@ -56,7 +56,7 @@ const DashboardPanel = () => {
                     className={styles.icon}
                   />{" "}
                 </div>
-                <p> Subscription History </p>
+                <span> Subscription History </span>
               </div>
             </Link>
           </li>
@@ -66,11 +66,11 @@ const DashboardPanel = () => {
                 <div className={styles.iconDiv}>
                   <FontAwesomeIcon icon={faKey} className={styles.icon} />{" "}
                 </div>
-                <p> Change Password </p>
+                <span> Change Password </span>
               </div>
             </Link>
           </li>
-        </div>
+        </ul>
       </div>
       {/* end of user_nav_pane */}
     </>
