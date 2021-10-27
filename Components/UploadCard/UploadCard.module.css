@@ -7,28 +7,24 @@
   position: relative;
   width: 100%;
 }
-/* .image {
-  object-fit: contain;
-  width: 100% !important;
-  position: relative !important;
-  height: unset !important;
-  height: 20rem;
-  width: 20rem;
-} */
+.editupload_card p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .editupload__image_container img {
   width: 100%;
   height: 100%;
 }
 .editupload__moreinfo {
-  padding: 0.9rem 1rem;
+  /* padding: 0.9rem 1rem;
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-areas:
-    "editupload__nameinfo editupload__nameinfo num_of_view num_of_view"
-    "boosted . . ."
-    "delete_btn delete_btn edit_btn edit_btn";
-  gap: 20px 2px;
+  grid-template-columns: 1fr;
+
+  gap: 20px 2px; */
+  display: flex;
+  flex-direction: column;
 }
 
 .editupload__nameinfo {
@@ -40,8 +36,14 @@
   justify-self: center;
   align-self: stretch;
 }
+.num_of_view span {
+  margin-left: 0.5rem;
+}
 .boosted {
   grid-area: boosted;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .delete_btn {
   grid-area: delete_btn;
@@ -50,6 +52,9 @@
   grid-area: edit_btn;
   width: 100%;
   justify-self: right;
+}
+.btn span {
+  margin-left: 0.5rem;
 }
 
 .editupload__nameinfo p:not(.item_name) {
@@ -72,6 +77,7 @@
   background-color: #1a508c;
   color: #ffffffd8;
   padding: 0.4rem 1rem;
+  margin-top: 0.5rem;
   width: 100px;
   cursor: pointer;
 }
@@ -87,28 +93,107 @@
   width: 120px;
 }
 .btn.delete_btn {
+  margin-top: 1rem;
+  width: 100%;
   background-color: #7e0000;
 }
+.btn.edit_btn {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* .editupload_card {
+  display: flex;
+  flex-direction: column;
+} */
 /* end of  if for edituploadPage */
 
-@media screen and (min-width: 500px) {
+.editupload_card {
+  display: flex;
+  padding: 0.9rem;
+  height: 100%;
+  margin: 4% auto;
+  width: 100%;
+  flex-direction: column;
+}
+.editupload__image_container {
+  padding-top: 100%;
+  /* height: 20rem; */
+  width: 100%;
+}
+@media screen and (min-width: 470px) {
+  .editupload__moreinfo {
+    padding: 0.9rem 1rem;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "editupload__nameinfo editupload__nameinfo num_of_view num_of_view"
+      "boosted . . ."
+      "delete_btn . . edit_btn";
+    gap: 20px 2px;
+  }
+
+  .editupload__moreinfo .num_of_view {
+    margin: 0.4rem 0;
+    color: #0000007a;
+  }
+
   .editupload__moreinfo .boosted {
-    width: 150px;
+    border: transparent;
+    background-color: #1a508c;
+    color: #ffffffd8;
+    padding: 0.4rem 1rem;
+    width: 100px;
+    cursor: pointer;
+  }
+
+  .editupload__moreinfo .btn {
+    color: #ffffffd8;
+    cursor: pointer;
+    border: transparent;
+    background-color: #1a508c;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    display: block;
+    width: 120px;
+  }
+  .btn.delete_btn {
+    background-color: #7e0000;
+    margin-top: 0;
+  }
+  .btn.edit_btn {
+    margin-top: 0;
   }
   .editupload__moreinfo .btn {
     width: 150px;
     padding: 0.8rem 1rem;
   }
+  .editupload__moreinfo .boosted {
+    margin-top: 0rem;
+  }
+}
+@media screen and (min-width: 500px) {
+  .editupload__image_container {
+    padding-top: 0;
+    height: 20rem;
+    width: 100%;
+  }
+  .editupload__moreinfo .boosted {
+    width: 150px;
+  }
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 1150px) {
   .editupload_card {
     display: flex;
     padding: 0.9rem;
     height: 20rem;
     margin: 4% auto;
+    flex-direction: row;
   }
   .editupload__image_container {
+    height: 100%;
     width: 40%;
   }
   .editupload__moreinfo {
@@ -126,5 +211,12 @@
       "editupload__nameinfo editupload__nameinfo num_of_view num_of_view"
       "boosted . delete_btn edit_btn"
       "boosted . delete_btn edit_btn";
+  }
+  .btn.delete_btn {
+    background-color: #7e0000;
+  }
+  .btn.edit_btn {
+    margin-top: 0;
+    margin-left: 0.5rem;
   }
 }

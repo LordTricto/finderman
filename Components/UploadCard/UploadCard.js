@@ -35,11 +35,12 @@ const UploadCard = () => {
           <div className={styles.boosted}>Boosted</div>
           <button className={`${styles["btn"]} ${styles["delete_btn"]}`}>
             <FontAwesomeIcon icon={faTrashAlt} className={styles.icon} />
-            Delete
+            <span>Delete</span>
           </button>
           <Link href="/updateMissingItem" passHref>
             <button className={`${styles["btn"]} ${styles["edit_btn"]}`}>
-              <FontAwesomeIcon icon={faPenAlt} className={styles.icon} /> Edit
+              <FontAwesomeIcon icon={faPenAlt} className={styles.icon} />
+              <span>Edit</span>
             </button>
           </Link>
         </div>
