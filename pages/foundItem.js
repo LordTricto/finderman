@@ -23,11 +23,7 @@ function FoundItem() {
       {/* start of container */}
       <div className={styles.container}>
         {/* start of extra_details_pane */}
-        <button
-          className={`${styles["extra_details_pane_btn "]} ${styles["blue"]} ${styles["close_extra_details_pane"]}`}
-        >
-          Get User Info
-        </button>
+
         <div className={styles.extra_details_pane}>
           <div className={styles.extra_details_grid}>
             {/* start of owner_contact_pane */}
@@ -49,59 +45,49 @@ function FoundItem() {
         {/*start of detail_container */}
         <div className={styles.detail_container}>
           {/* start of slider_container */}
-          <div className={styles.slider_container}>
-            {/* <ImageCarousel
+          <div className={styles.top_container}>
+            <div className={styles.slider_container}>
+              {/* <ImageCarousel
             // slides={SliderData}
             /> */}
-          </div>
-          {/* start of slider_container */}
-          {/* start of upload_images_section */}
-          <div className="upload_images_section">
-            {/* <h3 class="heading">Upload Images</h3> */}
-            <br />
-
-            {/* <button class="btn  upload_image_btn">Post</button> */}
-          </div>
-          {/* start of upload_images_section */}
-          <div className={styles.item_image_detail}>
-            {/* start of num_of_views */}
-            <div className={styles.num_of_views}>
-              <FontAwesomeIcon icon={faEye} className={styles.icon} />
-              <p>42 views</p>
             </div>
-            {/* end of num_of_views */}
-            <span className={styles["time-posted"]}>
-              <FontAwesomeIcon icon={faClock} className={styles.icon} />
-              <p> Posted Today,6:30 </p>
-            </span>
-            <span className={styles.location}>
-              <FontAwesomeIcon icon={faMapMarkerAlt} className={styles.icon} />
-              <p> Lagos,Ikorodu </p>
-            </span>
-          </div>
-          {/* start of about_item */}
-          <div className={styles.about_item}>
-            <h2 className={styles.about_item__name}>Adebayo Abiodun</h2>
-            <div className={styles.about_item_line}></div>
-            <div className={styles.about_item__description_pane}>
-              <h2 className={styles.about_item__description_pane__header}>
-                Description
-              </h2>
-              <div className={styles.about_item__description_pane_content}>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Facere, mollitia ex ullam labore magnam nesciunt soluta,
-                  officiis fuga pariatur inventore optio a quibusdam praesentium
-                  sint! Quisquam ratione fuga officiis odit. Lorem ipsum dolor
-                  sit amet consectetur adipisicing elit. Facere, mollitia ex
-                  ullam labore magnam nesciunt soluta, officiis fuga pariatur
-                  inventore optio a quibusdam praesentium sint! Quisquam ratione
-                  fuga officiis odit.
-                </p>
+            {/* start of slider_container */}
+            {/* start of upload_images_section */}
+            {/* start of upload_images_section */}
+            <div className={styles.item_image_detail}>
+              {/* start of num_of_views */}
+              <div className={styles.num_of_views}>
+                <FontAwesomeIcon icon={faEye} className={styles.icon} />
+                <p>42 views</p>
+              </div>
+              {/* end of num_of_views */}
+              <span className={styles["time-posted"]}>
+                <FontAwesomeIcon icon={faClock} className={styles.icon} />
+                <p> Posted Today, 6:30 </p>
+              </span>
+              <span className={styles.location}>
+                <FontAwesomeIcon
+                  icon={faMapMarkerAlt}
+                  className={styles.icon}
+                />
+                <p> Lagos, Ikorodu </p>
+              </span>
+            </div>
+            {/* start of about_item */}
+            <div className={styles.about_item}>
+              <h2 className={styles.about_item__name}>Adebayo Abiodun</h2>
+              <div>
+                {" "}
+                <button
+                  className={`${styles["extra_details_pane_btn "]} ${styles["blue"]} ${styles["close_extra_details_pane"]}`}
+                >
+                  Get User Info
+                </button>
               </div>
             </div>
+            {/* end of about_item */}
           </div>
-          {/* end of about_item */}
+
           {/* start of item_comment_section */}
           <div className={styles.item_comment_section}>
             <h3 className={styles.item_comment_section__header}>Comments</h3>
@@ -133,7 +119,7 @@ function FoundItem() {
                     text="Comment"
                     width="100%"
                     borderRadius="10px"
-                    fontSize="0.9rem"
+                    fontSize="1rem"
                     margin="0"
                   />
                 </div>

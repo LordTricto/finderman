@@ -26,6 +26,14 @@
   height: 100%;
   border-radius: 50%;
 }
+.owner_comment_text {
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: left;
+  font-size: 0.8rem;
+  color: var(--thick-blue);
+}
 
 @media screen and (min-width: 600px) {
   .comment_box {
@@ -35,12 +43,5 @@
   }
   .owner_of_comment_image {
     width: 50%;
-  }
-  .owner_comment_text {
-    box-shadow: 0px 3px 6px #00000029;
-    border-radius: 10px;
-    padding: 1rem;
-    text-align: left;
-    font-size: 0.8rem;
   }
 }

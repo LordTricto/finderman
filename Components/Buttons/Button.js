@@ -13,9 +13,10 @@ const Button = ({
   return (
     <>
       {/* <!-- start of Button container --> */}
-      <div className={styles.button}>
+      <div className={styles.button__container}>
         {/* <Link href={`${to}`}> */}
-        <input
+        <button
+          className={styles.button}
           type="submit"
           value={text}
           style={{
@@ -25,7 +26,9 @@ const Button = ({
             borderRadius: borderRadius,
             fontSize: fontSize,
           }}
-        ></input>
+        >
+          {text}
+        </button>
         {/* </Link> */}
       </div>
       {/* <!-- end of Button container --> */}

@@ -2,6 +2,7 @@
 
 .container {
   position: relative;
+  padding: 0 2rem;
   margin-top: 3.5rem;
 }
 
@@ -53,13 +54,17 @@
 .detail_container {
   z-index: 1;
 }
+.top_container {
+  box-shadow: 0px 3px 6px #00000029;
+}
 .slider_container {
   width: 100%;
-  /* border: 1px solid red; */
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px #00000029;
 }
 .image-curacel {
   position: absolute;
@@ -79,8 +84,6 @@
   bottom: 12px;
   left: 14px;
   width: 39px;
-
-  /* border: 1px solid red; */
 }
 
 #rightBtn {
@@ -99,8 +102,9 @@
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   gap: 10px;
-  padding: 0.5rem 0;
   font-size: 0.8rem;
+  width: 100%;
+  padding: 1rem 2rem;
 }
 
 .num_of_views,
@@ -109,9 +113,17 @@
   display: flex;
   align-items: center;
 }
+.location {
+  margin-left: 0.5rem;
+}
+.top_container span,
+.top_container p {
+  overflow: unset;
+}
 .num_of_views p,
 .time-posted p,
 .location p {
+  width: 100%;
   margin-left: 2%;
 }
 
@@ -127,10 +139,10 @@
 /* about_item  */
 .about_item {
   color: var(--thick-blue);
-  /* box-shadow: 0px 3px 6px #00000029; */
+  padding: 0 2rem;
 }
 .about_item__name {
-  padding: 1rem 0 2rem 0;
+  padding: 0 0 2rem 0;
   font-weight: 500;
 }
 .about_item_line {
@@ -156,15 +168,21 @@
 /* style for comment */
 
 .item_comment_section {
-  margin: 5% 0;
+  margin: 4rem 0;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px #00000029;
 }
 .create_item_comment {
-  padding: 1.4rem 0;
+  padding: 3.5rem 0;
+  border-bottom: 1px solid #f7f7f7;
 }
 .create_comment_btn {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  margin: 0 0 0 auto;
+  width: 30%;
 }
 .comment_owner_info {
   display: flex;
@@ -212,7 +230,7 @@
 
 @media screen and (min-width: 500px) {
   .item_image_detail {
-    grid-template-columns: 3fr 1fr 1fr;
+    grid-template-columns: 3fr 1fr auto;
   }
   .items_grid {
     display: grid;
@@ -242,6 +260,9 @@
   .slider_container {
   }
   .item_comment_section {
+    margin: 4rem auto;
+  }
+  .detail_container {
     max-width: 700px;
     margin: 5% auto;
   }

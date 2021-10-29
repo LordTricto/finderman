@@ -24,7 +24,7 @@
 /* start of contact_us_info_pane */
 .contact_us_info_pane {
   color: #ffffffd8;
-  padding: 1rem 1.2rem;
+  padding: 2rem;
   font-size: 1rem;
 }
 .contact_us_info_pane_header {
@@ -121,12 +121,13 @@
 @media screen and (min-width: 700px) {
   .contact_us_info_pane {
     height: 80%;
-    max-height: auto;
     padding: 2rem;
-    width: 40rem;
+    max-width: 40rem;
+    width: 100%;
   }
   .post_person_box {
-    width: 40rem;
+    max-width: 40rem;
+    width: 100%;
   }
   .container {
     margin: 0;
