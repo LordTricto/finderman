@@ -76,13 +76,17 @@ function FoundItem() {
             {/* start of about_item */}
             <div className={styles.about_item}>
               <h2 className={styles.about_item__name}>Adebayo Abiodun</h2>
-              <div>
+              <div className={styles.extra_details_pane_btn}>
                 {" "}
-                <button
-                  className={`${styles["extra_details_pane_btn "]} ${styles["blue"]} ${styles["close_extra_details_pane"]}`}
-                >
-                  Get User Info
-                </button>
+                <Button
+                  type="button"
+                  text="User Info"
+                  width="100%"
+                  borderRadius="10px"
+                  fontSize="1rem"
+                  padding="xsp"
+                  margin="0"
+                />
               </div>
             </div>
             {/* end of about_item */}

@@ -8,6 +8,7 @@ const Button = ({
   borderRadius,
   fontSize,
   to,
+  func,
   padding,
 }) => {
   return (
@@ -16,7 +17,7 @@ const Button = ({
       <div className={styles.button__container}>
         {/* <Link href={`${to}`}> */}
         <button
-          className={styles.button}
+          className={`${styles.button} ${padding} `}
           type="submit"
           value={text}
           style={{
@@ -26,6 +27,7 @@ const Button = ({
             borderRadius: borderRadius,
             fontSize: fontSize,
           }}
+          onClick={func}
         >
           {text}
         </button>

@@ -71,6 +71,12 @@ span {
 .react-select-nav__indicators {
   order: 1 !important;
 }
+
+.xsp {
+  padding: 0.5rem !important;
+  height: unset;
+}
+
 /* End of select styles */
 
 /* End of High level Styles*/

@@ -126,7 +126,7 @@
 }
 .text_area_section textarea {
   border: transparent;
-  padding: 1.2rem 2rem;
+  padding: 1.2rem 1rem;
   border-radius: 10px;
   background-color: #ececec99;
   width: 100%;
@@ -137,4 +137,10 @@
   color: #0d325ccc;
   font-weight: 400;
   font-size: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .text_area_section textarea {
+    padding: 1.2rem 2rem;
+  }
 }
