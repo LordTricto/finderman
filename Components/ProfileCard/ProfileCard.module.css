@@ -4,7 +4,7 @@
   box-shadow: 0px 3px 6px #00000029;
   border-radius: 10px;
   padding-bottom: 1rem;
-  margin: 7% 0;
+  margin: 7% auto;
   width: 18rem;
   background-color: white;
 }
@@ -72,6 +72,6 @@ p.owner_name {
 @media screen and (min-width: 1200px) {
   .owner_contact_pane {
     /* border: 1px solid brown; */
-    margin: 0;
+    margin: 0 auto;
   }
 }

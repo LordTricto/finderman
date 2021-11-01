@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import styles from "../styles/foundItem.module.css";
 import Image from "next/image";
 import Field from "../Components/Field/Field";
@@ -13,11 +14,14 @@ import {
   faClock,
   faEye,
   faMapMarkerAlt,
+  faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
 // import { SliderData } from "./data";
 
 function FoundItem() {
+  const [showContact, setShowContact] = useState(false);
+
   return (
     <>
       {/* start of container */}
@@ -41,6 +45,7 @@ function FoundItem() {
           </div>
           {/* end of owner_contact_pane */}
         </div>
+
         {/* end of extra_details_pane */}
         {/*start of detail_container */}
         <div className={styles.detail_container}>
@@ -86,6 +91,7 @@ function FoundItem() {
                   fontSize="1rem"
                   padding="xsp"
                   margin="0"
+                  func={() => setShowContact((prev) => !prev)}
                 />
               </div>
             </div>
@@ -203,6 +209,21 @@ function FoundItem() {
           {/* end of similar upload */}
         </div>
         {/*end of detail_container */}
+      </div>
+
+      <div className={showContact ? styles.mobile__content : "displayNone"}>
+        <div className={styles.mobile__contact}>
+          {/* start of owner_contact_pane */}
+          <ProfileCard />
+          {/* start owner_status_about_item */}
+          <FontAwesomeIcon
+            icon={faTimes}
+            className={styles.mobile__icon}
+            onClick={() => setShowContact((prev) => !prev)}
+          />
+        </div>
+
+        {/* end of owner_contact_pane */}
       </div>
       {/* end of container */}
     </>

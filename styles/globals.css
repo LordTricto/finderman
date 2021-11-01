@@ -72,11 +72,31 @@ span {
   order: 1 !important;
 }
 
+/* Buttons */
 .xsp {
   padding: 0.5rem !important;
-  height: unset;
+  height: unset !important;
+}
+@media screen and (min-width: 360px) {
 }
 
+@media screen and (min-width: 500px) {
+}
+
+@media screen and (min-width: 600px) {
+}
+
+@media screen and (min-width: 700px) {
+}
+
+@media screen and (min-width: 1000px) {
+}
+
+@media screen and (min-width: 1100px) {
+}
+
+@media screen and (min-width: 1200px) {
+}
 /* End of select styles */
 
 /* End of High level Styles*/
